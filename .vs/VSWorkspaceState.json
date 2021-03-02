@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Lab3 Variable",
+    "\\Test"
   ],
-  "SelectedNode": "\\input output.sln",
+  "SelectedNode": "\\Test\\Test.sln",
   "PreviewInSolutionExplorer": false
 }
