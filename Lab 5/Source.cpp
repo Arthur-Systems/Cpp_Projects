@@ -16,11 +16,11 @@ int main() {
 	const double large = 12.99;
 	const double medium = 9.99;
 	char coupon = ' ';
-
-	cout << "hi"
+	cout<< "Menu:"
+	cout << "what size
 	cin >> 
 
-
+if(toupper(size = 
 
 
 }
