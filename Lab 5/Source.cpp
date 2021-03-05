@@ -11,6 +11,18 @@ of the pizza orderned and heater or nmot the custromer has $2 courpon
 
 using namespace std;
 
+int main() {
+	 
+	const double large = 12.99;
+	const double medium = 9.99;
+	char coupon = ' ';
 
+	cout << "hi"
+	cin >> 
+
+
+
+
+}
 
 
