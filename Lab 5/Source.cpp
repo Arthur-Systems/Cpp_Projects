@@ -12,17 +12,39 @@ of the pizza orderned and heater or nmot the custromer has $2 courpon
 using namespace std;
 
 int main() {
-	 
+
 	const double large = 12.99;
 	const double medium = 9.99;
 	char coupon = ' ';
-	cout<< "Menu:"
-	cout << "what size
-	cin >> 
+	char size = ' ';
+	char sizechecked = ' ';
+	double totalprice = 0.00;
+	cout << "Menu:" << endl << "L Pizza: $12.99" << endl << "M pizza:$9.99" << endl;
+	
 
-if(toupper(size = 
+	while (toupper(sizechecked) != 'L' || toupper(sizechecked) != 'M') {
+		cout << "what size Pizza do you want? L or M?";
+		cin >> size;
+		if (toupper(size) == 'L' || toupper(size) == 'M')
+			sizechecked = size;
 
+		
+	}
+		cout << "Do you have a coupon?";
+		cin >> coupon;
 
+		if (toupper(sizechecked) == 'L') {
+			totalprice += large;
+		}
+		if (toupper(sizechecked) == 'M') {
+			totalprice += medium;
+		}
+		if (toupper(coupon) == 'Y') {
+			totalprice -= 2.00;
+		}
+	
+		cout << fixed << setprecision(2);
+		cout << "The subtotal is $" << totalprice << endl;
+
+		return 0;
 }
-
-
