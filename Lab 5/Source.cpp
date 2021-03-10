@@ -26,9 +26,10 @@ int main() {
 
 		cout << "what size Pizza do you want? L or M?" << endl;
 		cin >> size;
-		while (toupper(size) != 'L' && toupper(size) != 'M') {
+		while (true) {
 			if (toupper(size) == 'L' || toupper(size) == 'M') {
 				sizechecked = size;
+				break;
 			} else if (toupper(size) == '-') {
 				char num;
 				cin >> num;
@@ -58,17 +59,31 @@ int main() {
 	defualt:
 		cout << "Thats not a Option!" << endl;
 	}*/
-	cout << "Do you have a coupon?" << endl;;
-		cin >> coupon ;
 
 		if (toupper(sizechecked) == 'L') {
 			totalprice += large;
-		}
-		if (toupper(sizechecked) == 'M') {
+		} else if (toupper(sizechecked) == 'M') {
 			totalprice += medium;
 		}
-		if (toupper(coupon) == 'Y') {
-			totalprice -= 2.00;
+		cout << "Do you have a coupon?" << endl;;
+		cin >> coupon ;
+		while(true) {
+			if (toupper(coupon) == 'Y') {
+				totalprice -= 2.00;
+				break;
+			} else if (toupper(coupon) == 'N') {
+				break;
+			} else if (toupper(coupon) == '-') {
+				char num;
+				cin >> num;
+				if (num == '1') {
+					return 0;
+				} else {
+					cout << "wrong coupon input\n";
+				}
+			} else {
+					cout << "wrong coupon input\n";
+			}
 		}
 	
 		cout << fixed << setprecision(2);
