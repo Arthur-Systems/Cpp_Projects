@@ -24,16 +24,24 @@ int main() {
 	cout << "Menu:" << endl << "L Pizza: $12.99" << endl << "M pizza:$9.99" << endl<< "(-1 to exit program)"<<endl;
 
 
+		cout << "what size Pizza do you want? L or M?" << endl;
+		cin >> size;
 		while (toupper(size) != 'L' && toupper(size) != 'M') {
-			cout << "what size Pizza do you want? L or M?" << endl;
-			cin >> size;
-	
-			if (toupper(size) == 'L' || toupper(size) == 'M')
+			if (toupper(size) == 'L' || toupper(size) == 'M') {
 				sizechecked = size;
-
-
-			else
+			} else if (toupper(size) == '-') {
+				char num;
+				cin >> num;
+				if (num == '1') {
+					return;
+				} else {
+					size = num;
+					continue;
+				}
+			} else {
 				cout << "Thats not a Option!" << endl;
+			}
+			cin >> size;
 		}
 	
  /*	switch (size) {
