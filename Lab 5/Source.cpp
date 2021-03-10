@@ -19,19 +19,39 @@ int main() {
 	char size = ' ';
 	char sizechecked = ' ';
 	double totalprice = 0.00;
-	cout << "Menu:" << endl << "L Pizza: $12.99" << endl << "M pizza:$9.99" << endl;
+	int stopcode = 0;
 	
+	cout << "Menu:" << endl << "L Pizza: $12.99" << endl << "M pizza:$9.99" << endl<< "(-1 to exit program)"<<endl;
 
-	while (toupper(sizechecked) != 'L' || toupper(sizechecked) != 'M') {
-		cout << "what size Pizza do you want? L or M?";
-		cin >> size;
-		if (toupper(size) == 'L' || toupper(size) == 'M')
-			sizechecked = size;
 
-		
-	}
-		cout << "Do you have a coupon?";
-		cin >> coupon;
+		while (toupper(size) != 'L' && toupper(size) != 'M') {
+			cout << "what size Pizza do you want? L or M?" << endl;
+			cin >> size;
+	
+			if (toupper(size) == 'L' || toupper(size) == 'M')
+				sizechecked = size;
+
+
+			else
+				cout << "Thats not a Option!" << endl;
+		}
+	
+ /*	switch (size) {
+	case 'L':
+	case 'l':
+	size = sizechecked;
+	totalprice += large;
+		break;
+	case 'M':
+	case 'm':
+	size = sizechecked;
+	totalprice += medium;
+		break;
+	defualt:
+		cout << "Thats not a Option!" << endl;
+	}*/
+	cout << "Do you have a coupon?" << endl;;
+		cin >> coupon ;
 
 		if (toupper(sizechecked) == 'L') {
 			totalprice += large;
