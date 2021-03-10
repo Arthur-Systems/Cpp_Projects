@@ -33,7 +33,7 @@ int main() {
 				char num;
 				cin >> num;
 				if (num == '1') {
-					return;
+					return 0;
 				} else {
 					size = num;
 					continue;
