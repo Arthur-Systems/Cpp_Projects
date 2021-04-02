@@ -6,8 +6,8 @@ int main() {
 	int maxRows = 0;
 	cout << "how many Rows?";
 	cin >> maxRows;
-	for (int row = 0; row <= maxRows; row ++) {
-		for (int col = 0; col <= row; col ++) {
+	for (int row = 1; row <= maxRows; row ++) {
+		for (int col = 1; col <= row; col ++) {
 			cout << col;
 			//end for
 			//cout << endl;
