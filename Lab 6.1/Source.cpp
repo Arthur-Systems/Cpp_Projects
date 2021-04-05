@@ -7,7 +7,7 @@ int patternFunction(int maxRows) {
 		cout << "Wrong max row number: " << maxRows << endl;
 		return false;
 	}
-	for (int row = 0; row < maxRows; row++) {
+	for (int row = 0; row <= maxRows; row++) {
 		for (int col = 0; col <= row; col++) {
 			int num = col+1;
 			cout << num;
@@ -20,10 +20,11 @@ int patternFunction(int maxRows) {
 
 int main() {
 	bool pattern = false;
-	int maxRows = 0;
+	int maxRows ;
+	cout << "How many Rows?";
 	cin >> maxRows;
+	maxRows -= 1;
 	pattern = patternFunction(maxRows);
-
 	if (pattern) cout << "Fuction Worked";
 	return 0;
 	//end of main function
