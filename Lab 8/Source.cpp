@@ -42,3 +42,4 @@ double getPayment(int prin, double monthRate, int months){
     monthPay = prin * monthRate/(1-pow(monthRate +1, -months));
     return monthPay;
 } /// end of func 
+s
