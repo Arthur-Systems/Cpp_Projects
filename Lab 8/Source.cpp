@@ -17,6 +17,7 @@ void getInfo();
 int main()
 {
     char stopCode = 'N';
+
     while (stopCode != 'Y')
     {
         getInfo();
@@ -32,6 +33,7 @@ int main()
             cout << "You can finance through the dealer or the credit union" << endl;
         cout << "Do you want to stop the code?";
         cin >> stopCode;
+
         if (toupper(stopCode) == 'Y')
         {
             char stopCode = 'Y';
@@ -40,12 +42,11 @@ int main()
         }
         else if (toupper(stopCode) == 'N')
         {
-            cout << "Ok! " << endl;
+            cout << "Ok!" << endl;
             char stopCode = 'N';
         }
-        else
-            cout << "Type Y or N!";
     }
+
     return 0;
 }
 double getPayment(int prin, double monthRate, int months)
@@ -62,15 +63,21 @@ void getInfo()
     cin >> rebate;
     cout << "Credit unit rate:";
     cin >> creditRate;
+    if (creditRate > 1)
+    {
+        creditRate /= 100;
+    }
     cout << "Dealer rate:";
     cin >> dealerRate;
+    if (dealerRate > 1)
+    {
+        dealerRate /= 100;
+    }
     cout << "Term in years:";
-    if (creditRate > 0)
-        creditRate *= 100;
-    else if (dealerRate > 0)
-        dealerRate *= 100;
     cin >> term;
     //call function to calculate payments
-    creditPayment = getPayment(carPrice - rebate, creditRate / 12, term * 12);
-    dealerPayment = getPayment(carPrice, dealerRate / 12, term * 12);
+    creditPayment = getPayment(carPrice - rebate,
+                               creditRate / 12, term * 12);
+    dealerPayment = getPayment(carPrice,
+                               dealerRate / 12, term * 12);
 };
