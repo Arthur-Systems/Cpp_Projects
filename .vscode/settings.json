@@ -3,6 +3,7 @@
         "iostream": "cpp",
         "ostream": "cpp",
         "xlocale": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "xstring": "cpp"
     }
 }
