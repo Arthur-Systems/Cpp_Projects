@@ -9,13 +9,9 @@ Purpose-
 @param courseInfo - CS-116 OOP C++
 @return-
 */
-#ifndef LAB_1_MAIN_H
-#define LAB_1_MAIN_H
-#include <iostream>
-#include <cstdlib>
+#ifndef LAB_1_PRINTMEFIRST_H
+#define LAB_1_PRINTMEFIRST_H
 #include <string>
 using namespace std;
-
-
-
-#endif //LAB_1_MAIN_H
+void printMeFirst(string name, string courseInfo);
+#endif //LAB_1_PRINTMEFIRST_H

@@ -3,7 +3,6 @@
 #include <string>
 #include <ctime>
 #include "printMeFirst.h"
-
 using namespace std;
 
 /*
@@ -20,9 +19,11 @@ and date/time when the program is run
 
 void printMeFirst(string name, string courseInfo)
 {
+
 	cout << "Program written by: " << name << endl;
 	cout << "Course Info: " << courseInfo << endl;
 	time_t now = time(0);
-	char *dt = ctime(&now);
+	char* dt = ctime(&now);
 	cout << "Date: " << dt << endl;
 }
+

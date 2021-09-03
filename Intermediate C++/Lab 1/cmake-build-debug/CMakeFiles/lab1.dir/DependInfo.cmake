@@ -8,13 +8,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/main.cpp" "/Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/cmake-build-debug/CMakeFiles/Lab_1.dir/main.cpp.o"
+  "/Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/Main.cpp" "/Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/cmake-build-debug/CMakeFiles/lab1.dir/Main.cpp.o"
+  "/Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/Time.cpp" "/Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/cmake-build-debug/CMakeFiles/lab1.dir/Time.cpp.o"
+  "/Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/printMeFirst.cpp" "/Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/cmake-build-debug/CMakeFiles/lab1.dir/printMeFirst.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../."
   )
 
 # The set of dependency files which are needed:

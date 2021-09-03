@@ -117,41 +117,89 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Lab_1
+# Target rules for targets named lab1
 
 # Build rule for target.
-Lab_1: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Lab_1
-.PHONY : Lab_1
+lab1: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab1
+.PHONY : lab1
 
 # fast build rule for target.
-Lab_1/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_1.dir/build.make CMakeFiles/Lab_1.dir/build
-.PHONY : Lab_1/fast
+lab1/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1.dir/build.make CMakeFiles/lab1.dir/build
+.PHONY : lab1/fast
 
-main.o: main.cpp.o
-.PHONY : main.o
+Main.o: Main.cpp.o
+.PHONY : Main.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_1.dir/build.make CMakeFiles/Lab_1.dir/main.cpp.o
-.PHONY : main.cpp.o
+Main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1.dir/build.make CMakeFiles/lab1.dir/Main.cpp.o
+.PHONY : Main.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+Main.i: Main.cpp.i
+.PHONY : Main.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_1.dir/build.make CMakeFiles/Lab_1.dir/main.cpp.i
-.PHONY : main.cpp.i
+Main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1.dir/build.make CMakeFiles/lab1.dir/Main.cpp.i
+.PHONY : Main.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+Main.s: Main.cpp.s
+.PHONY : Main.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab_1.dir/build.make CMakeFiles/Lab_1.dir/main.cpp.s
-.PHONY : main.cpp.s
+Main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1.dir/build.make CMakeFiles/lab1.dir/Main.cpp.s
+.PHONY : Main.cpp.s
+
+Time.o: Time.cpp.o
+.PHONY : Time.o
+
+# target to build an object file
+Time.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1.dir/build.make CMakeFiles/lab1.dir/Time.cpp.o
+.PHONY : Time.cpp.o
+
+Time.i: Time.cpp.i
+.PHONY : Time.i
+
+# target to preprocess a source file
+Time.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1.dir/build.make CMakeFiles/lab1.dir/Time.cpp.i
+.PHONY : Time.cpp.i
+
+Time.s: Time.cpp.s
+.PHONY : Time.s
+
+# target to generate assembly for a file
+Time.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1.dir/build.make CMakeFiles/lab1.dir/Time.cpp.s
+.PHONY : Time.cpp.s
+
+printMeFirst.o: printMeFirst.cpp.o
+.PHONY : printMeFirst.o
+
+# target to build an object file
+printMeFirst.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1.dir/build.make CMakeFiles/lab1.dir/printMeFirst.cpp.o
+.PHONY : printMeFirst.cpp.o
+
+printMeFirst.i: printMeFirst.cpp.i
+.PHONY : printMeFirst.i
+
+# target to preprocess a source file
+printMeFirst.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1.dir/build.make CMakeFiles/lab1.dir/printMeFirst.cpp.i
+.PHONY : printMeFirst.cpp.i
+
+printMeFirst.s: printMeFirst.cpp.s
+.PHONY : printMeFirst.s
+
+# target to generate assembly for a file
+printMeFirst.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1.dir/build.make CMakeFiles/lab1.dir/printMeFirst.cpp.s
+.PHONY : printMeFirst.cpp.s
 
 # Help Target
 help:
@@ -161,10 +209,16 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Lab_1"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... lab1"
+	@echo "... Main.o"
+	@echo "... Main.i"
+	@echo "... Main.s"
+	@echo "... Time.o"
+	@echo "... Time.i"
+	@echo "... Time.s"
+	@echo "... printMeFirst.o"
+	@echo "... printMeFirst.i"
+	@echo "... printMeFirst.s"
 .PHONY : help
 
 
