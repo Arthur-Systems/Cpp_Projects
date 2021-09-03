@@ -12,6 +12,10 @@ Purpose-
 #ifndef LAB_1_PRINTMEFIRST_H
 #define LAB_1_PRINTMEFIRST_H
 #include <string>
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <ctime>
 using namespace std;
 void printMeFirst(string name, string courseInfo);
 #endif //LAB_1_PRINTMEFIRST_H

@@ -89,6 +89,15 @@
 		<Unit filename="/Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/Time.cpp">
 			<Option target="lab1"/>
 		</Unit>
+		<Unit filename="/Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/Time.h">
+			<Option target="lab1"/>
+		</Unit>
+		<Unit filename="/Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/cmake-build-debug/FtC.cpp">
+			<Option target="lab1"/>
+		</Unit>
+		<Unit filename="/Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/cmake-build-debug/FtC.h">
+			<Option target="lab1"/>
+		</Unit>
 		<Unit filename="/Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/printMeFirst.cpp">
 			<Option target="lab1"/>
 		</Unit>

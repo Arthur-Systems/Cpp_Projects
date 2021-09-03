@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/cmake-build-debug/FtC.cpp" "/Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/cmake-build-debug/CMakeFiles/lab1.dir/FtC.cpp.o"
   "/Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/Main.cpp" "/Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/cmake-build-debug/CMakeFiles/lab1.dir/Main.cpp.o"
   "/Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/Time.cpp" "/Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/cmake-build-debug/CMakeFiles/lab1.dir/Time.cpp.o"
   "/Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/printMeFirst.cpp" "/Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/cmake-build-debug/CMakeFiles/lab1.dir/printMeFirst.cpp.o"

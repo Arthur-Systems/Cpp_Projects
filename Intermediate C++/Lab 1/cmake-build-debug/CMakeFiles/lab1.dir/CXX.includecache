@@ -9,8 +9,6 @@
 /Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/Main.cpp
 Main.h
 /Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/Main.h
-string
--
 printMeFirst.h
 /Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/printMeFirst.h
 
@@ -29,6 +27,14 @@ string
 -
 
 /Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/printMeFirst.cpp
+printMeFirst.h
+/Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/printMeFirst.h
+Main.h
+/Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/Main.h
+
+/Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/printMeFirst.h
+string
+-
 iostream
 -
 iomanip
@@ -36,11 +42,5 @@ iomanip
 string
 -
 ctime
--
-printMeFirst.h
-/Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/printMeFirst.h
-
-/Users/arthur/Documents/GitHub/Cpp_Projects/Intermediate C++/Lab 1/printMeFirst.h
-string
 -
 

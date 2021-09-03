@@ -16,6 +16,4 @@ Purpose-
 #include <string>
 using namespace std;
 
-
-
 #endif //LAB_1_MAIN_H

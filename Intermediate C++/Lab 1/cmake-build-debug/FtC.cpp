@@ -2,19 +2,11 @@
 Purpose- 
 
 @author Haichuan Wei
-@version 1.0 9/2/21
+@version 1.0 9/3/21
 @using  CLion
 
 @param name - 
 @param courseInfo - CS-116 OOP C++
 @return-
 */
-#include "Main.h"
-#include <string>
-
-void Time(int seconds, int time){
-
-
-
-
-};
+#include "FtC.h"

@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/lab1.dir/FtC.cpp.o"
   "CMakeFiles/lab1.dir/Main.cpp.o"
   "CMakeFiles/lab1.dir/Time.cpp.o"
   "CMakeFiles/lab1.dir/printMeFirst.cpp.o"

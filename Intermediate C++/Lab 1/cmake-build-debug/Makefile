@@ -129,6 +129,30 @@ lab1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1.dir/build.make CMakeFiles/lab1.dir/build
 .PHONY : lab1/fast
 
+FtC.o: FtC.cpp.o
+.PHONY : FtC.o
+
+# target to build an object file
+FtC.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1.dir/build.make CMakeFiles/lab1.dir/FtC.cpp.o
+.PHONY : FtC.cpp.o
+
+FtC.i: FtC.cpp.i
+.PHONY : FtC.i
+
+# target to preprocess a source file
+FtC.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1.dir/build.make CMakeFiles/lab1.dir/FtC.cpp.i
+.PHONY : FtC.cpp.i
+
+FtC.s: FtC.cpp.s
+.PHONY : FtC.s
+
+# target to generate assembly for a file
+FtC.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1.dir/build.make CMakeFiles/lab1.dir/FtC.cpp.s
+.PHONY : FtC.cpp.s
+
 Main.o: Main.cpp.o
 .PHONY : Main.o
 
@@ -210,6 +234,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... lab1"
+	@echo "... FtC.o"
+	@echo "... FtC.i"
+	@echo "... FtC.s"
 	@echo "... Main.o"
 	@echo "... Main.i"
 	@echo "... Main.s"

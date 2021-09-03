@@ -1,8 +1,6 @@
-#include <iostream>
-#include <iomanip>
-#include <string>
-#include <ctime>
+
 #include "printMeFirst.h"
+#include "Main.h"
 using namespace std;
 
 /*
@@ -19,7 +17,6 @@ and date/time when the program is run
 
 void printMeFirst(string name, string courseInfo)
 {
-
 	cout << "Program written by: " << name << endl;
 	cout << "Course Info: " << courseInfo << endl;
 	time_t now = time(0);
