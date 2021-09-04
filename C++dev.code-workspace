@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "Cpp_Projects\\Intermediate C++\\Lab 1"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"iostream": "cpp",
+			"iomanip": "cpp",
+			"string": "cpp",
+			"xlocale": "cpp",
+			"ostream": "cpp"
+		}
+	}
+}
