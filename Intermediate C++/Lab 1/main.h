@@ -11,9 +11,6 @@ Purpose-
 */
 #ifndef LAB_1_MAIN_H
 #define LAB_1_MAIN_H
-#include <iostream>
-#include <cstdlib>
-#include <string>
 using namespace std;
 
 #endif //LAB_1_MAIN_H

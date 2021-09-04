@@ -11,5 +11,5 @@ Purpose-
 */
 #ifndef LAB1_TIME_H
 #define LAB1_TIME_H
-
+void Time(int seconds);
 #endif //LAB1_TIME_H

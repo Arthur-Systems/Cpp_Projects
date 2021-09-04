@@ -1,18 +1,20 @@
-
 #include "printMeFirst.h"
 #include "Main.h"
+#include <string>
+#include <iostream>
+#include <iomanip>
+#include <ctime>
 using namespace std;
 
 /*
-Purpose- Print out the programmer's information such as name, class information,
-and date/time when the program is run
+Purpose- Prints the 
 
-@author Ron Sha
-@version 1.0 1/1/2016
-
-@param name - person's name
-@param courseInfo - course information
-@return- none
+@author Haichuan Wei
+@version 1.0 9/2/21
+@using  CLion
+@param name - 
+@param courseInfo - CS-116 OOP C++
+@return-
 */
 
 void printMeFirst(string name, string courseInfo)
@@ -20,7 +22,6 @@ void printMeFirst(string name, string courseInfo)
 	cout << "Program written by: " << name << endl;
 	cout << "Course Info: " << courseInfo << endl;
 	time_t now = time(0);
-	char* dt = ctime(&now);
+	char *dt = ctime(&now);
 	cout << "Date: " << dt << endl;
 }
-

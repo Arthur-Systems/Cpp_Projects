@@ -11,10 +11,23 @@ Purpose-
 */
 #include "Main.h"
 #include <string>
+#include <iostream>
+using namespace std;
 
-void Time(int seconds, int time){
+void Time(int seconds)
+{
 
-
-
-
+    if (seconds > 0)
+    {
+        int hours = seconds / 3600;
+        int minutes = (seconds % 3600) / 60;
+        int seconds2 = seconds % 60;
+        cout << hours << " hours " << minutes << " minutes " << seconds2 << " seconds" << endl;
+    }
+    else
+    {
+        cout << "Invalid input" << endl;
+        cin >> seconds;
+        Time(seconds);
+    }
 };
