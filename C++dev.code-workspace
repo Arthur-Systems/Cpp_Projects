@@ -13,7 +13,10 @@
       "iomanip": "cpp",
       "string": "cpp",
       "xlocale": "cpp",
-      "ostream": "cpp"
+      "ostream": "cpp",
+      "cstdlib": "cpp",
+      "ios": "cpp",
+      "xiosbase": "cpp"
     },
     "makefile.extensionOutputFolder": "./.vscode"
   }

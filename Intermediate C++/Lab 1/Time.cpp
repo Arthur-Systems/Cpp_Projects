@@ -10,10 +10,8 @@ Purpose-
 @return-
 */
 #include "Time.h"
-#include <string>
 #include <iostream>
 using namespace std;
-
 void Time(int seconds)
 {
 
@@ -24,10 +22,18 @@ void Time(int seconds)
         int seconds2 = seconds % 60;
         cout << hours << " hours " << minutes << " minutes " << seconds2 << " seconds" << endl;
     }
-    else
+    else if (cin.fail())
     {
-        cout << "Invalid input" << endl;
+        cout << "Please enter A valid NUMBER" << endl;
+        cin.clear();
+        cin.ignore(1000, '\n');
         cin >> seconds;
         Time(seconds);
     }
-};
+    else
+    {
+        cout << "Please enter a POSTIVE number" << endl;
+        cin >> seconds;
+        Time(seconds);
+    }
+}

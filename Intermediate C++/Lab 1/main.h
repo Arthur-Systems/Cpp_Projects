@@ -11,6 +11,5 @@ Purpose-
 */
 #ifndef LAB_1_MAIN_H
 #define LAB_1_MAIN_H
-using namespace std;
 
 #endif //LAB_1_MAIN_H

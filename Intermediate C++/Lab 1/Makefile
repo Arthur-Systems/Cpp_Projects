@@ -2,16 +2,17 @@ CXX = g++
 CXXFLAGS = -Wall -Werror -Wextra -pedantic -std=c++17 -g -fsanitize=address
 LDFLAGS =  -fsanitize=address
 
-# SRC = 
-# OBJ = main.cpp main.h printMeFirst.h printMeFirst.cpp Time.h Time.cpp
-SRC = main.cpp main.h printMeFirst.h printMeFirst.cpp Time.h Time.cpp
-OBJ = main.o printMeFirst.o Time.o
+SRC = main.cpp printMeFirst.cpp Time.cpp FtC.cpp CtF.cpp
+OBJ = $(SRC:.cpp=.o)
 EXEC = Calculator
 
 all: $(EXEC)
-
 $(EXEC): $(OBJ)
-	$(CXX) $(LDFLAGS) -o $@ $(OBJ) 
+	$(CXX) $(LDFLAGS) -o $@ $(OBJ) $(LBLIBS)
 
-clean: 
+clean:
+	echo "Cleaning up"
 	rm -rf $(OBJ) $(EXEC)
+run:
+	echo "Code created by Haichuan Wei. Enjoy :3"
+	./$(EXEC)
