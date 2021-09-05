@@ -9,7 +9,7 @@ Purpose-
 @param courseInfo - CS-116 OOP C++
 @return-
 */
-#include "Main.h"
+#include "Time.h"
 #include <string>
 #include <iostream>
 using namespace std;

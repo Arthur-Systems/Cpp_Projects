@@ -15,9 +15,10 @@ Purpose-
 #include "main.h"
 #include "printMeFirst.h"
 #include "Time.h"
-int main(int argc, char *argv[]) {
+//int main(int argc, char *argv[]) {
+int main() {
     int choice;
-    char stopcode = ' ';
+    // char stopcode = ' ';
     printMeFirst("testing", "123");
     cout << "Welcome to my calculator!" << endl;
     cout << "Choose one of the three options!" << endl;
