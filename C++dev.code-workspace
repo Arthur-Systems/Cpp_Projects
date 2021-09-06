@@ -16,7 +16,9 @@
       "ostream": "cpp",
       "cstdlib": "cpp",
       "ios": "cpp",
-      "xiosbase": "cpp"
+      "xiosbase": "cpp",
+      "xstring": "cpp",
+      "istream": "cpp"
     },
     "makefile.extensionOutputFolder": "./.vscode"
   }

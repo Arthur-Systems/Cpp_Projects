@@ -6,6 +6,7 @@ void FtoC(double fahrenheit)
 {
     if (!cin.fail())
     {
+
         double celsius = (fahrenheit - 32) * 5 / 9;
         cout << fahrenheit << " degrees Fahrenheit is " << setprecision(1) << fixed << celsius << " degrees Celsius." << endl;
     }
