@@ -39,20 +39,25 @@ int main()
             switch (choice)
             {
             case 1:
-                cout << "You have chosen the time calculator!\nPlease Input the seconds you want to convert" << endl;
+                cout << "\tYou have chosen the time calculator!\n\tPlease Input the seconds you want to convert" << endl;
                 cin >> seconds;
+                cout << endl;
                 Time(seconds);
-                cin >> choice;
+                cout << endl;
                 break;
             case 2:
-                cout << "You picked the Fahrenheit to Celsius Calculator!\nPlease input the Temp in Fahrenheit you want to conver." << endl;
+                cout << "\tYou picked the Fahrenheit to Celsius Calculator!\n\tPlease input the Temp in Fahrenheit you want to conver." << endl;
                 cin >> fahrenheit;
+                cout << endl;
                 FtoC(fahrenheit);
+                cout << endl;
                 break;
             case 3:
-                cout << "You picked the Celsius to Fahrenheit Calculator! \n Please input the Temp in Celsius you want to convert." << endl;
+                cout << "\tYou picked the Celsius to Fahrenheit Calculator\n\tPlease input the Temp in Celsius you want to convert." << endl;
                 cin >> celcius;
+                cout << endl;
                 CtoF(celcius);
+                cout << endl;
                 break;
             case 4:
                 cout << "Rodger that, Quitting!" << endl;
