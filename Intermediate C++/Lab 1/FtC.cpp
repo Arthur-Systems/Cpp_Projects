@@ -1,3 +1,12 @@
+/*
+Purpose- This programs takes the user defined fahrenheit and converts it to celsius.
+@author Haichuan Wei
+@version 1.0 9/2/21
+@using  CLion
+
+@param fahrenheit - the user defined fahrenheit
+@return-none
+*/
 #include <iostream>
 #include <iomanip>
 #include "Ftc.h"

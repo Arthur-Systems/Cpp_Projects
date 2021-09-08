@@ -6,8 +6,7 @@
 using namespace std;
 
 /*
-Purpose- Prints the 
-
+Purpose- Prints the information of the developer.
 @author Haichuan Wei
 @version 1.0 9/2/21
 @using  CLion

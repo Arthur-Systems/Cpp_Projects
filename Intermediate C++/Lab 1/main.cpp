@@ -1,13 +1,14 @@
 /*
-Purpose- 
+Purpose- This project is a multifunctional calculator that can be used to convert secounds to hours, minutes, and seconds. It also convert Fahrenheit to Celsius and Celsius to Fahrenheit.
 
 @author Haichuan Wei
 @version 1.0 9/2/21
-@using  CLion
 
-@param name - 
-@param courseInfo - CS-116 OOP C++
-@return-
+@param fahrenheit - The number of fahrenheit defined by the user
+@param celcius - The number of celcius defined by the user
+@param seconds - The number of seconds defined by the user
+@Arthur-Systems
+@return-none
 */
 #include <iostream>
 #include <cstdlib>
