@@ -1,13 +1,12 @@
-/*
-Purpose- This programs takes the user defined celcius and converts it to farnhrenheit .
+// Purpose- This function takes the user defined celcius and converts it to farnhrenheit .
 
-@author Haichuan Wei
-@version 1.0 9/2/21
-@using  CLion
+// @author Haichuan Wei
+// @version 1.0 9/2/21
+// @using  CLion
 
-@param celcius - the user defined celcius
-@return-none
-*/
+// @param celcius - the user defined celcius
+// @return-none
+
 #include <iostream>
 #include <iomanip>
 #include "CtF.h"

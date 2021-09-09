@@ -46,6 +46,7 @@ int main()
                 Time(seconds);
                 cout << endl;
                 break;
+
             case 2:
                 cout << "\tYou picked the Fahrenheit to Celsius Calculator!\n\tPlease input the Temp in Fahrenheit you want to conver." << endl;
                 cin >> fahrenheit;

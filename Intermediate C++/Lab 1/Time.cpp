@@ -1,5 +1,5 @@
 /*
-Purpose- This programs takes the user defined seconds and display it in the format of hours:minutes:seconds. Then it asks the user if they want to repeat the process.
+Purpose- This function takes the user defined seconds and display it in the format of hours:minutes:seconds. Then it asks the user if they want to repeat the process.
 
 @author Haichuan Wei
 @version 1.0 9/2/21
