@@ -13,6 +13,7 @@ Purpose- This function takes the user defined seconds and display it in the form
 using namespace std;
 void Time(int seconds)
 {
+
     if (seconds > 0)
     {
         int hours = seconds / 3600;

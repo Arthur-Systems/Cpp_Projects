@@ -13,6 +13,7 @@ Purpose- This function takes the user defined fahrenheit and converts it to cels
 using namespace std;
 void FtoC(double fahrenheit)
 {
+
     if (!cin.fail())
     {
 
