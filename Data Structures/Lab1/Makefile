@@ -1,14 +1,14 @@
 CC = g++
 CFLAGS = -Wall -Werror -Wextra -pedantic -std=c++17 -g -fsanitize=address
-LDFLAGS = -lm
+LDFLAGS = 
 
-SRC = *.cpp
-OBJ = $(src:.cpp=.o)
+SRC = $(wildcard *.cpp)
+OBJ = $(SRC:.cpp=.o)
 EXE = a1
 
 all: $(EXE)
 $(EXE): $(OBJ)
-	$(CC) $(LDFLAGS) -o $(OBJ) 
+	$(CC) $(LDFLAGS) -o $(EXE) $(OBJ) 
 
 clean:
 	rm -rf $(OBJ) $(EXE)

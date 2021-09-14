@@ -7,4 +7,5 @@ using namespace std;
 int main()
 {
     cout << "You move forward and find yourself in a maze.\n";
+    bool result = inquire("do you want to play?");
 }
