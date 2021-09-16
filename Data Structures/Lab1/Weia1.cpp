@@ -6,6 +6,10 @@ using namespace std;
 
 int main()
 {
-    cout << "You move forward and find yourself in a maze.\n";
-    bool result = inquire("do you want to play?");
+    do
+    {
+        cout << "You step forward & write your name on the ground.\n";
+        traverse_maze();
+
+    } while (!traverse_maze());
 }
