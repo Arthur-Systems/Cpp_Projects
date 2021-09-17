@@ -6,10 +6,13 @@ using namespace std;
 
 int main()
 {
-    do
+    cout << "You step forward & write your name on the ground.\n";
+    bool IsFinished = traverse_maze();
+    cout << endl;
+    cout << IsFinished;
+    if (IsFinished)
     {
-        cout << "You step forward & write your name on the ground.\n";
-        traverse_maze();
-
-    } while (!traverse_maze());
+        cout << " Finished!";
+        return 0;
+    }
 }

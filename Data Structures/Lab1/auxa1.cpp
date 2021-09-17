@@ -14,7 +14,6 @@ void eat_line( )
 // 
 {
     char next;
-
     do
         cin.get(next);
     while (next != '\n');
