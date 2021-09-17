@@ -10,14 +10,17 @@ int maze[5][5] = {
     {0, 0, 0, 0, 0},
     {0, 0, 0, 0, 0},
     {0, 0, 0, 0, 0}};
-
-int yPosition = 2;
-int xPosition = 1;
+int StepsTaken[10] = {0, 1, 0, 2, 0, 1, 0, 1, 0, 2};
+int yPosition = 3;
+int xPosition = 0;
 void test_maze(int maze[5][5]); // forward declaration
+bool dead_end(int xPosition, int yPosition); // forward declaration
+void backtrack(int StepsTaken[10]);          // forward declaration
 bool traverse_maze()
 {
 
     cout << endl;
+    cin.clear();
     bool found = inquire("Have you found the tapestry?");
     if (found)
     {
@@ -25,13 +28,13 @@ bool traverse_maze()
         // backtrack(xPosition, yPosition);
         return true;
     }
-    if (found == false)
+    else if (!found)
     {
-        bool LeftWall = inquire("\tPlease turn left 90 degrees \n Are you facing a wall?");
+        bool LeftWall = inquire("Please turn left 90 degrees \n Are you facing a wall?");
         if (!LeftWall)
         {
             //move left
-            bool NameCheck = inquire("\tIs your name written in front of you?");
+            bool NameCheck = inquire("Is your name written in front of you?");
             if (NameCheck)
             {
                 traverse_maze();
@@ -39,8 +42,9 @@ bool traverse_maze()
             if (!NameCheck)
             {
                 cout << "Step forward & write your name on the ground." << endl;
-                yPosition -= 1;
+                yPosition -= 2;
                 maze[yPosition][xPosition] = 2;
+                cout << dead_end(xPosition, yPosition);
                 test_maze(maze);
                 traverse_maze();
             }
@@ -76,11 +80,45 @@ bool traverse_maze()
 
 bool dead_end(int xPosition, int yPosition)
 {
-    return maze[xPosition][yPosition] == '1' || maze[xPosition][yPosition] == '2';
+    return maze[yPosition][xPosition] == '1' || maze[yPosition][xPosition] == '2';
 }
 
-void backtrack()
+void backtrack(int StepsTaken[10])
 {
+    //insert numbers into the array
+    for (int i = 0; i < 10; i++)
+    {
+        StepsTaken[i] = i;
+    }
+    //reverse the array
+    for (int i = 0; i < 10; i++)
+    {
+        StepsTaken[i] = StepsTaken[9 - i];
+    }
+    //print the array
+    for (int i = 0; i < 10; i++)
+    {
+        cout << StepsTaken[i] << " ";
+    }
+    cout << endl;
+    //see if the array has a 1
+    for (int i = 0; i < 10; i++)
+    {
+        if (StepsTaken[i] == 1)
+        {
+            cout << "Bye!" << endl;
+            return;
+        }
+    }
+    //see if the array has a 2
+    for (int i = 0; i < 10; i++)
+    {
+        if (StepsTaken[i] == 2)
+        {
+            cout << "Hey!" << endl;
+            return;
+        }
+    }
 }
 void test_maze(int maze[5][5])
 {

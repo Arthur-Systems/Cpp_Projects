@@ -3,7 +3,7 @@
 #include <iostream>
 
 using namespace std;
-
+void backtrack();
 int main()
 {
     cout << "You step forward & write your name on the ground.\n";
@@ -12,7 +12,8 @@ int main()
     cout << IsFinished;
     if (IsFinished)
     {
-        cout << " Finished!";
+        cout << " Pick up the tapestry and take a step backward.";
+        backtrack();
         return 0;
     }
 }
