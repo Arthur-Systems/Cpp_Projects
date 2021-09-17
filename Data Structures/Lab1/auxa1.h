@@ -15,10 +15,10 @@
 //     'N' or 'n'. (If the response begins with some other letter, then the
 //     query is repeated.)
 
-#ifndef AUXA1_H // Prevent duplicate definition
-#define AUXA1_H 
+#ifndef WeiA1_H // Prevent duplicate definition
+#define WeiA1_H
 
-    void eat_line( );
-    bool inquire(const char query[ ]);
+void eat_line();
+bool inquire(const char query[]);
 
 #endif
