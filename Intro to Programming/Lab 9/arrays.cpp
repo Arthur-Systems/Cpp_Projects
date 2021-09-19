@@ -3,16 +3,17 @@
 using namespace std;
 
 
-
-void func(int myArray[10]){
-    
-    for(int x=0;x<10;x++){
-
-        cout << myArray[x];
-    }
-}
+int x=0;
+int y=0;
 int main()
 {
-int myArray[10] = {1,1,1,1,1,1,1,1};
- func(myArray[]);
+ double grades[3][3] = {{1.0,9.0},{2.0,8.8},{3.0,7.0}};
+
+ for(;x<3;x++){
+     for(;y<2;y++){
+    cout << grades[x][y] << " ";
+     }
+     y=0;
+ }
+return 0;
 }

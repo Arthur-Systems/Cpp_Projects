@@ -6,13 +6,12 @@ she wants a program that displays the price of a pizza given the size
 of the pizza orderned and heater or nmot the custromer has $2 courpon
 */
 
-#include <iostream>
-#include <iomanip>
+#include<iostream>
+#include<iomanip>
 
 using namespace std;
 
-int main()
-{
+int main() {
 
 	const double large = 12.99;
 	const double medium = 9.99;
@@ -21,43 +20,32 @@ int main()
 	char sizechecked = ' ';
 	double totalprice = 0.00;
 	int stopcode = 0;
+	
+	cout << "Menu:" << endl << "L Pizza: $12.99" << endl << "M pizza:$9.99" << endl<< "(-1 to exit program)"<<endl;
 
-	cout << "Menu:" << endl
-		 << "L Pizza: $12.99" << endl
-		 << "M pizza:$9.99" << endl
-		 << "(-1 to exit program)" << endl;
 
-	cout << "what size Pizza do you want? L or M?" << endl;
-	cin >> size;
-	while (true)
-	{
-		if (toupper(size) == 'L' || toupper(size) == 'M')
-		{
-			sizechecked = size;
-			break;
-		}
-		else if (toupper(size) == '-')
-		{
-			char num;
-			cin >> num;
-			if (num == '1')
-			{
-				return 0;
-			}
-			else
-			{
-				size = num;
-				continue;
-			}
-		}
-		else
-		{
-			cout << "Thats not a Option!" << endl;
-		}
+		cout << "what size Pizza do you want? L or M?" << endl;
 		cin >> size;
-	}
-
-	/*	switch (size) {
+		while (true) {
+			if (toupper(size) == 'L' || toupper(size) == 'M') {
+				sizechecked = size;
+				break;
+			} else if (toupper(size) == '-') {
+				char num;
+				cin >> num;
+				if (num == '1') {
+					return 0;
+				} else {
+					size = num;
+					continue;
+				}
+			} else {
+				cout << "Thats not a Option!" << endl;
+			}
+			cin >> size;
+		}
+	
+ /*	switch (size) {
 	case 'L':
 	case 'l':
 	size = sizechecked;
@@ -72,49 +60,34 @@ int main()
 		cout << "Thats not a Option!" << endl;
 	}*/
 
-	if (toupper(sizechecked) == 'L')
-	{
-		totalprice += large;
-	}
-	else if (toupper(sizechecked) == 'M')
-	{
-		totalprice += medium;
-	}
-	cout << "Do you have a coupon?" << endl;
-	;
-	cin >> coupon;
-	while (true)
-	{
-		if (toupper(coupon) == 'Y')
-		{
-			totalprice -= 2.00;
-			break;
+		if (toupper(sizechecked) == 'L') {
+			totalprice += large;
+		} else if (toupper(sizechecked) == 'M') {
+			totalprice += medium;
 		}
-		else if (toupper(coupon) == 'N')
-		{
-			break;
-		}
-		else if (toupper(coupon) == '-')
-		{
-			char num;
-			cin >> num;
-			if (num == '1')
-			{
-				return 0;
-			}
-			else
-			{
-				cout << "wrong coupon input\n";
+		cout << "Do you have a coupon?" << endl;;
+		cin >> coupon ;
+		while(true) {
+			if (toupper(coupon) == 'Y') {
+				totalprice -= 2.00;
+				break;
+			} else if (toupper(coupon) == 'N') {
+				break;
+			} else if (toupper(coupon) == '-') {
+				char num;
+				cin >> num;
+				if (num == '1') {
+					return 0;
+				} else {
+					cout << "wrong coupon input\n";
+				}
+			} else {
+					cout << "wrong coupon input\n";
 			}
 		}
-		else
-		{
-			cout << "wrong coupon input\n";
-		}
-	}
+	
+		cout << fixed << setprecision(2);
+		cout << "The subtotal is $" << totalprice << endl;
 
-	cout << fixed << setprecision(2);
-	cout << "The subtotal is $" << totalprice << endl;
-
-	return 0;
+		return 0;
 }
