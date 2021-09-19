@@ -21,7 +21,8 @@ int main()
    cout << fixed << showpoint << setprecision(2);
 
    cout << "Please enter the annual income and tax rate for 3 tax payers: " << endl;
-   cout << endl << endl;
+   cout << endl
+        << endl;
 
    for (int count = 0; count < 3; count++)
    {
@@ -33,15 +34,16 @@ int main()
 
       cout << endl;
 
-      taxPayerList[count].taxes 
-         = taxPayerList[count].income * taxPayerList[count].taxRate/100;
+      taxPayerList[count].taxes = taxPayerList[count].income * taxPayerList[count].taxRate / 100;
    }
 
-   cout << "Taxes due for this year: " << endl << endl;
+   cout << "Taxes due for this year: " << endl
+        << endl;
 
    for (int index = 0; index < 5; index++)
    {
-      cout << "Tax Payer # " << (index + 1) << ": " << "$ "
+      cout << "Tax Payer # " << (index + 1) << ": "
+           << "$ "
            << taxPayerList[index].taxes << endl;
    }
 
