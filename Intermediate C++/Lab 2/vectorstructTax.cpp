@@ -1,9 +1,9 @@
 //
-// Purpose- use vector structs in order to store and calculate tax based on data supplied by the user.
+// Purpose- use C++ vector in order to store and calculate tax based on data supplied by the user.
 // @author Haichuan Wei
 // @version 1.0 9/19/21
 // @param  main()- is the entry point of the program and is where the storing and calculation of data is done.
-// @return- The total tax for each person given by the user.
+// @return- 0 and print out the total tax for each person given by the user.
 //
 #include <iostream>
 #include <vector>
