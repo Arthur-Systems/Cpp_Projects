@@ -14,17 +14,16 @@ using namespace std;
 
 struct Data
 {
-    double AmountOfRain = 0;
-    double total = 0;
-    double average = 0;
-    double largest = 0;
-    double smallest = 0;
+    double AmountOfRain;
+    double total;
+    double average;
+    double largest;
+    double smallest;
 };
 
-//vector array
-vector<Data *> totalrain;
-bool rainfallstore()
+int rainfallstore(vector<Data *> &totalrain)
 {
+
     for (int index = 0; index < 12; index++)
     {
         Data *Newdata = new Data;
@@ -41,6 +40,7 @@ bool rainfallstore()
             else
             {
                 cout << "Enter a number ABOVE ZERO" << endl;
+                cout << "Please Reenter your number" << endl;
                 cin.clear();
                 cin.ignore(1000, '\n');
                 index--;
@@ -49,15 +49,15 @@ bool rainfallstore()
         else
         {
             cout << "Please Enter a VALID NUMBER!" << endl;
+            cout << "Please Reenter your number" << endl;
             cin.clear();
             cin.ignore(1000, '\n');
             index--;
         }
     }
-    return true;
+    return 0;
 }
-
-void CalculateData()
+void Calculate(vector<Data *> &totalrain)
 {
     //total data
     for (int index = 0; index < 12; index++)
@@ -85,9 +85,29 @@ void CalculateData()
             totalrain[0]->largest = totalrain[index]->AmountOfRain;
         }
     }
+}
 
-    cout << "The total rainfall for the year is:" << totalrain[0]->total << " Inches" << endl;
-    cout << "The average rainfall for the year is:" << totalrain[0]->average << " Inches" << endl;
-    cout << "The smallest rainfall for the year is:" << totalrain[0]->smallest << " Inches" << endl;
-    cout << "The smallest rainfall for the year is:" << totalrain[0]->largest << " Inches" << endl;
+void Sortdata(vector<Data *> &totalrain)
+{
+    //selection sort
+    for (int index = 0; index < totalrain.size(); index++)
+    {
+        int min = index;
+        for (int index2 = index + 1; index2 < totalrain.size(); index2++)
+        {
+            if (totalrain[index2]->AmountOfRain < totalrain[min]->AmountOfRain)
+            {
+                min = index2;
+            }
+        }
+        Data *temp = totalrain[index];
+        totalrain[index] = totalrain[min];
+        totalrain[min] = temp;
+    }
+
+    //print the vector
+    for (int index = 0; index < totalrain.size(); index++)
+    {
+        cout << "The SORTED rainfall for month #" << (index + 1) << " is:" << totalrain[index]->AmountOfRain << " Inches" << endl;
+    }
 }

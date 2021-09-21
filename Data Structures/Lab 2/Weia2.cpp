@@ -17,21 +17,15 @@ using namespace std;
 int main()
 {
     rainfallstore();
-    cout << rainfallstore() << endl;
-    bool worked = rainfallstore();
-    if (worked)
-    {
-        CalculateData();
-    }
-    else
-    {
-        cout << "Error: Something went wrong! Try again!" << endl;
-        rainfallstore();
-    }
+    int size = rainfall.size();
+    if ()
 }
 /*
 
-
+cout << "The total rainfall for the year is:" << totalrain[0]->total << " Inches" << endl;
+    cout << "The average rainfall for the year is:" << totalrain[0]->average << " Inches" << endl;
+    cout << "The smallest rainfall for the year is:" << totalrain[0]->smallest << " Inches" << endl;
+    cout << "The smallest rainfall for the year is:" << totalrain[0]->largest << " Inches" << endl;
 
 */
 
