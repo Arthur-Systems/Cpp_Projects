@@ -1,5 +1,6 @@
 #ifndef _WEIA2_H_
 #define _WEIA2_H_
-int rainfallstore();
-void codetest();
+bool rainfallstore();
+void CalculateData();
+
 #endif // !1

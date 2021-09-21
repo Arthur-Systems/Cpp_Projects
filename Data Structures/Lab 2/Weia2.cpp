@@ -17,18 +17,34 @@ using namespace std;
 int main()
 {
     rainfallstore();
-}
-
-void codetest()
-{
-    //print out the vector array
-    for (int index = 0; index < 12; index++)
+    cout << rainfallstore() << endl;
+    bool worked = rainfallstore();
+    if (worked)
     {
-        cout << "Month #" << (index + 1) << ": \t";
-        for (int index2 = 0; index2 < totalrain[index].size(); index2++)
-        {
-            cout << totalrain[index][index2] << " ";
-        }
-        cout << endl;
+        CalculateData();
+    }
+    else
+    {
+        cout << "Error: Something went wrong! Try again!" << endl;
+        rainfallstore();
     }
 }
+/*
+
+
+
+*/
+
+// void codetest()
+// {
+//     //print out the vector array
+//     for (int index = 0; index < 12; index++)
+//     {
+//         cout << "Month #" << (index + 1) << ": \t";
+//         for (int index2 = 0; index2 < totalrain[index].size(); index2++)
+//         {
+//             cout << totalrain[index][index2] << " ";
+//         }
+//         cout << endl;
+//     }
+// }

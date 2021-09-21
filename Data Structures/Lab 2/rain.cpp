@@ -12,44 +12,82 @@
 #include "rain.h"
 using namespace std;
 
-//vector array
-vector<double> totalrain[13];
-int rainfallstore()
+struct Data
 {
-    int rain;
+    double AmountOfRain = 0;
+    double total = 0;
+    double average = 0;
+    double largest = 0;
+    double smallest = 0;
+};
+
+//vector array
+vector<Data *> totalrain;
+bool rainfallstore()
+{
     for (int index = 0; index < 12; index++)
     {
+        Data *Newdata = new Data;
+        double rain;
         if (!cin.fail())
         {
+            cout << "Enter the rain (in inches) for month  #" << (index + 1) << ":";
+            cin >> rain;
+            if (rain >= 0)
             {
-                cout << "Enter the rain (in inches) for month  #" << (index + 1) << ": \t";
-                cin >> rain;
-                totalrain[index].push_back(rain);
+                Newdata->AmountOfRain = rain;
+                totalrain.push_back(Newdata);
             }
-        }
-        else if (rain < 0)
-        {
-            cout << "Enter a number ABOVE ZERO" << endl;
-            cin.clear();
-            cin.ignore(1000, '\n');
+            else
+            {
+                cout << "Enter a number ABOVE ZERO" << endl;
+                cin.clear();
+                cin.ignore(1000, '\n');
+                index--;
+            }
         }
         else
         {
-            cout << "Please Enter a NUMBER!" << endl;
+            cout << "Please Enter a VALID NUMBER!" << endl;
             cin.clear();
             cin.ignore(1000, '\n');
+            index--;
         }
     }
-    //print out the vector array
+    return true;
+}
+
+void CalculateData()
+{
+    //total data
     for (int index = 0; index < 12; index++)
     {
-        cout << "Month #" << (index + 1) << ": \t";
-        for (int index2 = 0; index2 < totalrain[index].size(); index2++)
+        totalrain[0]->total += totalrain[index]->AmountOfRain;
+    }
+    //average data
+    totalrain[0]->average = totalrain[0]->total / 12;
+
+    //smallest data
+    totalrain[0]->smallest = totalrain[0]->AmountOfRain;
+    for (int index = 0; index < 12; index++)
+    {
+        if (totalrain[index]->AmountOfRain < totalrain[0]->smallest)
         {
-            cout << totalrain[index][index2] << " ";
+            totalrain[0]->smallest = totalrain[index]->AmountOfRain;
         }
-        cout << endl;
+    }
+    // largest data
+    totalrain[0]->largest = totalrain[0]->AmountOfRain;
+    for (int index = 0; index < 12; index++)
+    {
+        if (totalrain[index]->AmountOfRain > totalrain[0]->largest)
+        {
+            totalrain[0]->largest = totalrain[index]->AmountOfRain;
+        }
     }
 
-    return 0;
+    cout << "The total rainfall for the year is:" << totalrain[0]->total << " Inches" << endl;
+    cout << "The average rainfall for the year is:" << totalrain[0]->average << " Inches" << endl;
+    cout << "The smallest rainfall for the year is:" << totalrain[0]->smallest << " Inches" << endl;
+    cout << "The smallest rainfall for the year is:" << totalrain[0]->largest << " Inches" << endl;
 }
