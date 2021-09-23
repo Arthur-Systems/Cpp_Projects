@@ -1,14 +1,15 @@
 //
-// Purpose- use C++ vector in order to store and calculate tax based on data supplied by the user.
+// Purpose- The purpose of this file is to take 12 user defined inputs and use sorting to sort them from lease to greatest.
 // @author Haichuan Wei
-// @version 1.0 9/19/21
-// @param  main()- is the entry point of the program and is where the storing and calculation of data is done.
-// @return- 0 and print out the total tax for each person given by the user.
+// @version 1.0 9/21/21
+// @param  rainfallstore()- This functions asks all the user to input the rainfall data and store it in a vector. Then calculate and sort the inputted data
+// @return- 0 and prints out the sorted  data.
 //
 #include <iostream>
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <iomanip>
 #include "rain.h"
 using namespace std;
 
@@ -20,8 +21,8 @@ struct Data
     double largest;
     double smallest;
 };
-
-int rainfallstore(vector<Data *> &totalrain)
+vector<Data *> totalrain;
+int rainfallstore()
 {
 
     for (int index = 0; index < 12; index++)
@@ -55,19 +56,16 @@ int rainfallstore(vector<Data *> &totalrain)
             index--;
         }
     }
-    return 0;
-}
-void Calculate(vector<Data *> &totalrain)
-{
-    //total data
-    for (int index = 0; index < 12; index++)
+
+    //!total data: goes though all every given data and adds them together
+    for (int index = 0; index < totalrain.size(); index++)
     {
         totalrain[0]->total += totalrain[index]->AmountOfRain;
     }
-    //average data
+    //!average data: Devides the already given total and puts it in the average variable in the structure.
     totalrain[0]->average = totalrain[0]->total / 12;
 
-    //smallest data
+    //!smallest data: First initializes by setting itself as the first data in the vector and then goes through the vector and compares its current data with the vector data and if it is smaller it will set the smallest data to the current data.
     totalrain[0]->smallest = totalrain[0]->AmountOfRain;
     for (int index = 0; index < 12; index++)
     {
@@ -76,7 +74,7 @@ void Calculate(vector<Data *> &totalrain)
             totalrain[0]->smallest = totalrain[index]->AmountOfRain;
         }
     }
-    // largest data
+    // !largest data: same princpal as the smallest data but it will compare the current data with the vector data and if it is larger it will set the largest data to the current data.
     totalrain[0]->largest = totalrain[0]->AmountOfRain;
     for (int index = 0; index < 12; index++)
     {
@@ -85,29 +83,35 @@ void Calculate(vector<Data *> &totalrain)
             totalrain[0]->largest = totalrain[index]->AmountOfRain;
         }
     }
-}
-
-void Sortdata(vector<Data *> &totalrain)
-{
-    //selection sort
-    for (int index = 0; index < totalrain.size(); index++)
+    //! The below code is to print out the data in the correct format. It looks at the first position each of the variables which was already defined by the code above and prints it out.
+    cout << fixed << setprecision(2) << endl
+         << endl
+         << "The total rainfall for the year is:" << totalrain[0]->total << " Inches" << endl
+         << "The average rainfall for the year is:" << totalrain[0]->average << " Inches" << endl
+         << "The smallest rainfall for the year is:" << totalrain[0]->smallest << " Inches" << endl
+         << "The largest rainfall for the year is:" << totalrain[0]->largest << " Inches" << endl;
+    //!selection sort: This sort first takes the smallest data and puts it in the first position of the vector and then goes through the vector and compares the current data with the vector data and if it is smaller it will swap the data.
+    for (int count = 0; count < totalrain.size(); count++)
     {
-        int min = index;
-        for (int index2 = index + 1; index2 < totalrain.size(); index2++)
+        int MinimumNum = count;
+        for (int LookAhead = count + 1; LookAhead < totalrain.size(); LookAhead++)
         {
-            if (totalrain[index2]->AmountOfRain < totalrain[min]->AmountOfRain)
+            if (totalrain[LookAhead]->AmountOfRain < totalrain[MinimumNum]->AmountOfRain)
             {
-                min = index2;
+                MinimumNum = LookAhead;
             }
         }
-        Data *temp = totalrain[index];
-        totalrain[index] = totalrain[min];
-        totalrain[min] = temp;
+        Data *temp = totalrain[count];
+        totalrain[count] = totalrain[MinimumNum];
+        totalrain[MinimumNum] = temp;
     }
-
-    //print the vector
+    cout << endl
+         << endl
+         << "Here are the rainfall amounts, sorted in ascending order:" << endl;
     for (int index = 0; index < totalrain.size(); index++)
     {
-        cout << "The SORTED rainfall for month #" << (index + 1) << " is:" << totalrain[index]->AmountOfRain << " Inches" << endl;
+        cout << totalrain[index]->AmountOfRain << endl;
     }
+
+    return 0;
 }
