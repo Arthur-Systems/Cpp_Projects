@@ -1,27 +1,15 @@
-#
-#
-CC=g++
-#
-#CFLAGS = -c -Wall -I/usr/include/mysql 
-#LFLAGS = -L/usr/lib/mysql -lmysqlclient
+CXX = g++
+CXXFLAGS = -Wall -Werror -Wextra -pedantic -std=c++17 -g -fsanitize=address
+LDFLAGS =  -fsanitize=address
 
-CFLAGS = -c -Wall  
-LFLAGS =  
+SRC = employee_main.cpp employee.cpp printMeFirst.cpp
+OBJ = $(SRC:.cc=.o)
+EXEC = Employee
 
+all: $(EXEC)
 
-all: vectorstructTax
+$(EXEC): $(OBJ)
+	$(CXX) $(LDFLAGS) -o $@ $(OBJ) $(LBLIBS)
 
-vectorstructTax: vectorstructTax.o printMeFirst.o 
-	$(CC) vectorstructTax.o printMeFirst.o  -o vectorstructTax $(LFLAGS)
-
-vectorstructTax.o: vectorstructTax.cpp
-	$(CC) $(CFLAGS) vectorstructTax.cpp
-
-print_me_first.o: printMeFirst.cpp
-	$(CC) $(CFLAGS) printMeFirst.cpp
-	
 clean:
-	rm *.o vectorstructTax
-
-run:
-	./vectorstructTax 
+	rm -rf $(OBJ) $(EXEC)
