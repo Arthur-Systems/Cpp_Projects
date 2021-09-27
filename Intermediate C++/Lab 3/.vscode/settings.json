@@ -6,6 +6,12 @@
         "system_error": "cpp",
         "xlocale": "cpp",
         "ostream": "cpp",
-        "xmemory": "cpp"
+        "xmemory": "cpp",
+        "xlocmon": "cpp",
+        "xlocnum": "cpp",
+        "xloctime": "cpp",
+        "iterator": "cpp",
+        "memory": "cpp",
+        "xutility": "cpp"
     }
 }

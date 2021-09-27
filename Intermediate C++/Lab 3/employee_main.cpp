@@ -2,7 +2,6 @@
 #include "employee.h"
 #include "printMeFirst.h"
 #include <string>
-
 int main()
 {
     printMeFirst("Haichuan Wei", "CS-116 Lab 4"); //put your name

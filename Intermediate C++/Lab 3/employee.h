@@ -12,12 +12,17 @@ private:
     string position;
 
 public:
+    void setInfo(string name, int idNumber, string department, string position);
     void setDepartment(string department);
     void setPosition(string position);
     void setName(string name);
-    void setInfo(string name, int idNumber, string department, string position);
     void setIdNumber(int idNumber);
-    void displayEmployee() const;
+    //getData
+    string getName();
+    int getIdNumber();
+    string getDepartment();
+    string getPosition();
+    void getInfo();
 };
-
+void displayEmployee(Employee employee);
 #endif // EMPLOYEE_H
