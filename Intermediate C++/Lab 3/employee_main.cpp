@@ -1,7 +1,17 @@
+/*
+Purpose- This is the predefined main file. This the test driver for my code. My code is built around this. This files calls the class defined in the headder by creating objects and calling the function using it.
+
+@author Haichuan Wei
+@version 1.0 9/26/21
+@Function name: main
+@ Function description: Displays the the data stored in the variables of the employee class.
+@param param_name 
+@return- 0
+*/
+
 #include <iostream>
 #include "employee.h"
 #include "printMeFirst.h"
-#include <string>
 int main()
 {
     printMeFirst("Haichuan Wei", "CS-116 Lab 4"); //put your name

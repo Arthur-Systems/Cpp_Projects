@@ -1,3 +1,14 @@
+
+/*
+Purpose- This file contains the implementation of the Employee class. The employee main file runs the code here. 
+@author Haichuan Wei @Arthur-Systems
+@version 1.0 9/26/21
+@Function name: displayEmployee
+@ Function description: Displays the the data stored in the variables of the employee class.
+@param string name the name of the employee , int idNumber the Id number , string department the department , string position the position they hold
+@return- name, idNumber , department ,position
+*/
+
 #include <iostream>
 #include "employee.h"
 #include "printMeFirst.h"

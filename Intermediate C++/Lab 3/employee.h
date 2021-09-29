@@ -1,3 +1,12 @@
+/*
+Purpose- The purpose of this headder file is to create and define a class called Employee. And then Define the functions that will be used in the program.
+@author Haichuan Wei
+@version 1.0 9/26/21
+@param Employee class - defines the structure.
+@param displayEmployee - defines the function that displays the employee information.
+@return-none
+*/
+
 #ifndef EMPLOYEE_H
 #define EMPLOYEE_H
 using namespace std;
