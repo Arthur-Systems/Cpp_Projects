@@ -1,6 +1,6 @@
 /*
 Purpose- Practice with using templates by writing a function that finds the 
-smallest element in a vector.
+smallest element in an array.
 @author Haichuan Wei
 @version 1.0 10/5/21
 @function main()- the entry point of the program. It holds the test 
