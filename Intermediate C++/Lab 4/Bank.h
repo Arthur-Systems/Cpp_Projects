@@ -9,6 +9,7 @@ Purpose- The purpose of this headder file is to create and define a class called
 #ifndef _Bank_h_
 #define _Bank_h_
 #include "Account.h"
+#include <string>
 class Bank
 {
 public:

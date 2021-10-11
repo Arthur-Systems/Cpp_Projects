@@ -7,7 +7,8 @@ Purpose-
 */
 #ifndef _Account_h_
 #define _Account_h_
-
+#include "Bank.h"
+#include <string>
 class Account
 {
 

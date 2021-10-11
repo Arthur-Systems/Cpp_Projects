@@ -1,7 +1,6 @@
 #include <iostream>
-#include <string>
+
 #include "Account.h"
-#include "Bank.h"
 using namespace std;
 
 void Account::deposit(double amount)
