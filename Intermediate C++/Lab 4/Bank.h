@@ -1,15 +1,21 @@
 /*
-Purpose- The purpose of this headder file is to create and define a class called Employee. And then Define the functions that will be used in the program.
+Purpose- This is the header file for the Bank class. It's purpose is to call the account class to calculate the balance of the account then prints the balance.
 @author Haichuan Wei
-@version 1.0 9/26/21
-@param Employee class - defines the structure.
-@param displayEmployee - defines the function that displays the employee information.
+@version 1.0 10/10/21
+@class function Bank() - the deafult constructor.
+@class function Bank(double , double) - the constructor with paramenters of checkingAmount and savingsAmount.
+@class function deposit(double, string) - this function will take in the amount and account type specified by the user and call the Account class deposit function witch will add the amount to the total balance.
+@class function withdraw(double, string) - this function will take in the amount and account type specified by the user and call the Account class withdraw function witch will subtract the amount from the total balance.
+@class transaction(double, string) - this function will take in the amount and account type specified by the user and then it add money to oppsite account specified by the user and remove it from the current account.
+@class function printBalances() - this function will print the total balance of each account everytime it is called. 
 @return-none
 */
+
 #ifndef _Bank_h_
 #define _Bank_h_
-#include "Account.h"
+using namespace std;
 #include <string>
+#include "Account.h"
 class Bank
 {
 public:

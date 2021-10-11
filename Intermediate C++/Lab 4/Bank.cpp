@@ -1,8 +1,6 @@
-#include "Bank.h"
 #include <iostream>
-
-using namespace std;
-//deposit member function will call Account member function deposit
+#include "Bank.h"
+#include <iomanip>
 void Bank::deposit(double amount, string account)
 {
     if (account == "C")
@@ -13,9 +11,15 @@ void Bank::deposit(double amount, string account)
     {
         savings.deposit(amount);
     }
-};
-
-//withdraw member function will call Account member function withdraw
+}
+Bank::Bank()
+{
+}
+Bank::Bank(double checkingAmount, double savingsAmount)
+{
+    checking.deposit(checkingAmount);
+    savings.deposit(savingsAmount);
+}
 void Bank::withdraw(double amount, string account)
 {
     if (account == "C")
@@ -26,8 +30,7 @@ void Bank::withdraw(double amount, string account)
     {
         savings.withdraw(amount);
     }
-};
-
+}
 void Bank::transfer(double amount, string account)
 {
     if (account == "C")
@@ -40,9 +43,10 @@ void Bank::transfer(double amount, string account)
         savings.withdraw(amount);
         checking.deposit(amount);
     }
-};
+}
 void Bank::printBalances() const
 {
-    cout << "Checking Balance: " << checking.getBalance() << endl;
+    cout << fixed << setprecision(2);
     cout << "Savings Balance: " << savings.getBalance() << endl;
-};
+    cout << "Checking Balance: " << checking.getBalance() << endl;
+}
