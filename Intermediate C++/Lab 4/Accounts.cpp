@@ -1,12 +1,34 @@
 #include <iostream>
+#include <string>
+#include "Account.h"
+#include "Bank.h"
 using namespace std;
 
-class Account
+void Account::deposit(double amount)
+{
+    balance += amount;
+}
+void Account::withdraw(double amount)
+{
+    balance -= amount;
+}
+double Account::getBalance() const
+{
+    return balance;
+}
+
+// Charge a $5 penalty if an attempt is made to withdraw more money than what is available in the account
+
+void Account::penalty(double amount)
 {
 
-public:
-    double blance;
-    void deposit;
-    void withdraw;
-    double getBlance() const;
+    if (amount <= balance)
+    {
+        balance -= amount;
+    }
+    else
+    {
+        cout << "Too little funds! Removing 5$ lol";
+        balance -= 5;
+    }
 }
