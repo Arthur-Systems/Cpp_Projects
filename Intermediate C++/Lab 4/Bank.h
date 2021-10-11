@@ -8,7 +8,7 @@ Purpose- The purpose of this headder file is to create and define a class called
 */
 #ifndef _Bank_h_
 #define _Bank_h_
-
+#include "Account.h"
 class Bank
 {
 public:
@@ -21,8 +21,8 @@ public:
     void printBalances() const;
 
 private:
-    double checking; //   change ????? with correct data type for variable checking
-    double savings;  // use correct data type for variable savings
+    Account checking; //   change ????? with correct data type for variable checking
+    Account savings;  // use correct data type for variable savings
 };
 
 #endif //!_Bank_h_

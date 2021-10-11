@@ -1,13 +1,15 @@
 #include "Bank.h"
-#include "Account.h"
 #include <iostream>
 #include <string>
 
 using namespace std;
-Account accounts;
 //deposit member function will call Account member function deposit
 void Bank::deposit(double amount, string account)
 {
+    if (account == "C")
+    {
+        checking.deposit(amount);
+    }
 }
 
 //withdraw member function will call Account member function withdraw
