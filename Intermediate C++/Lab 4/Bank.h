@@ -4,9 +4,13 @@ Purpose- This is the header file for the Bank class. It's purpose is to call the
 @version 1.0 10/10/21
 @class function Bank() - the deafult constructor.
 @class function Bank(double , double) - the constructor with paramenters of checkingAmount and savingsAmount.
+@param checkingAmount - the amount of money in the checking account.
+@param savingsAmount - the amount of money in the savings account.
 @class function deposit(double, string) - this function will take in the amount and account type specified by the user and call the Account class deposit function witch will add the amount to the total balance.
 @class function withdraw(double, string) - this function will take in the amount and account type specified by the user and call the Account class withdraw function witch will subtract the amount from the total balance.
 @class transaction(double, string) - this function will take in the amount and account type specified by the user and then it add money to oppsite account specified by the user and remove it from the current account.
+@param amount - the amount of money to be added or removed from the account.
+@param account - the account type.
 @class function printBalances() - this function will print the total balance of each account everytime it is called. 
 @return-none
 */

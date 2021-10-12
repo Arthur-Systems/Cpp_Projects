@@ -1,8 +1,6 @@
 /*
-Purpose- This program uses class structors to calculate the total balance of a bank account based on user defined inputs.
+Purpose- This program uses class structures to calculate the total balance of a bank account based on user defined inputs.
 @author Haichuan Wei
-@version 1.0 10/10/21 
-@return-none
 */
 #include <iostream>
 #include "printMeFirst.h"

@@ -6,6 +6,7 @@ Purpose- The account class is used to calculate the balance of the user provided
 @class function deposit(double): This function is used to add the numbers to the balance varable. 
 @class function withdraw(double): This function is used to subtract the user defined number from the balance varable.
 @class function getBalance(): This function is used to return the balance varable.
+@param amount - the amount of money to be added or removed from the account.
 @return-balance
 */
 
