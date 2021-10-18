@@ -8,42 +8,92 @@ Money::Money(int dollars, int cents)
     this->dollars = dollars;
     this->cents = cents;
 }
-
-Money::Money()
+int Money::getDollars()
 {
-    this->dollars = 0;
-    this->cents = 0;
+    return dollars;
 }
 
-void Money::add(Money m)
+int Money::getCents()
 {
-    this->cents += m.cents;
-    this->dollars += m.dollars;
-    if (this->cents >= 100)
+    return cents;
+}
+
+// The class object should also have overloaded operators
+
+Money operator+(Money m1, Money m2)
+{
+    int totalCents = m1.getCents() + m2.getCents();
+    int totalDollars = m1.getDollars() + m2.getDollars();
+    if (totalCents >= 100)
     {
-        this->dollars += this->cents / 100;
-        this->cents = this->cents % 100;
+        totalDollars += totalCents / 100;
+        totalCents = totalCents % 100;
     }
+    return Money(totalDollars, totalCents);
 }
-void Money::subtract(Money m)
+Money operator-(Money m1, Money m2)
 {
-    this->cents -= m.cents;
-    this->dollars -= m.dollars;
-    if (this->cents < 0)
+    int totalCents = m1.getCents() - m2.getCents();
+    int totalDollars = m1.getDollars() - m2.getDollars();
+    if (totalCents < 0)
     {
-        this->dollars -= this->cents / 100 - 1;
-        this->cents = this->cents % 100 + 100;
+        totalDollars -= totalCents / 100;
+        totalCents = totalCents % 100;
     }
+    return Money(totalDollars, totalCents);
 }
 
-// Money::{
-//     Money temp;
-//     temp.dollars = m1.dollars - m2.dollars;
-//     temp.cents = m1.cents - m2.cents;
-//     if (temp.cents < 0)
-//     {
-//         temp.cents = temp.cents + 100;
-//         temp.dollars = temp.dollars - 1;
-//     }
-//     return temp;
-// }
+// operand types are: int * Money
+Money operator*(int i, Money m)
+{
+    int totalCents = m.getCents() * i;
+    int totalDollars = m.getDollars() * i;
+    if (totalCents >= 100)
+    {
+        totalDollars += totalCents / 100;
+        totalCents = totalCents % 100;
+    }
+    return Money(totalDollars, totalCents);
+}
+
+Money operator/(Money m1, Money m2)
+{
+    int totalCents = m1.getCents() / m2.getCents();
+    int totalDollars = m1.getDollars() / m2.getDollars();
+    if (totalCents >= 100)
+    {
+        totalDollars += totalCents / 100;
+        totalCents = totalCents % 100;
+    }
+    return Money(totalDollars, totalCents);
+}
+
+// get remainder  operand types are: int % Money
+Money operator%(int m1, Money m2)
+{
+    int totalCents = m1 % m2.getCents();
+    int totalDollars = m1 / m2.getCents();
+    if (totalCents >= 100)
+    {
+        totalDollars += totalCents / 100;
+        totalCents = totalCents % 100;
+    }
+    return Money(totalDollars, totalCents);
+}
+// operand types are: Money == Money
+bool operator==(Money m1, Money m2)
+{
+    return (m1.getDollars() == m2.getDollars() && m1.getCents() == m2.getCents());
+}
+// operand types are: std::ostream << Money
+std::ostream &operator<<(std::ostream &os, Money m)
+{
+    os << m.getDollars() << " dollars and " << m.getCents() << " cents";
+    return os;
+}
+// operand types are: std::basic_ostream<char, std::char_traits<char>> << Money
+std::basic_ostream<char, std::char_traits<char>> &operator<<(std::basic_ostream<char, std::char_traits<char>> &os, Money m)
+{
+    os << m.getDollars() << " dollars and " << m.getCents() << " cents";
+    return os;
+}
