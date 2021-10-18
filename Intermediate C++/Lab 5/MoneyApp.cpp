@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "printMeFirst.h"
 #include "Money.h"
 using namespace std;
@@ -6,7 +7,6 @@ int main()
 {
     printMeFirst("Haichuan Wei", "CS-116 2021SP"); // change to your name
     Money m(2, 2);                                 // $2.02
-
     cout << "Original value is " << m << endl;
     Money n = 50 % m;
     cout << "50% of value is " << n << endl;
