@@ -10,6 +10,7 @@ all: $(EXEC)
 
 $(EXEC): $(OBJ)
 	$(CXX) $(LDFLAGS) -o $@ $(OBJ) $(LBLIBS)
-
+run:
+	./$(EXEC)
 clean:
 	rm -rf $(EXEC)
