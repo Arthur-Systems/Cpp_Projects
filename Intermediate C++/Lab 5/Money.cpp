@@ -1,7 +1,6 @@
 #include <iostream>
 #include "Money.h"
 #include <iomanip>
-
 using namespace std;
 Money::Money()
 {
@@ -18,15 +17,11 @@ int Money::getDollars()
 
     return dollars;
 }
-
 int Money::getCents()
 {
 
     return cents;
 }
-
-// The class object should also have overloaded operators
-
 Money operator+(Money m1, Money m2)
 {
     int totalCents = m1.getCents() + m2.getCents();
@@ -40,17 +35,18 @@ Money operator+(Money m1, Money m2)
 }
 Money operator-(Money &m1, Money &m2)
 {
-    int totalCents = m1.getCents() - m2.getCents();
-    int totalDollars = m1.getDollars() - m2.getDollars();
+    // subtract the total money
+    double total = m1.getDollars() - m2.getDollars();
+    total += (m1.getCents() - m2.getCents()) / 100.0;
+    int totalCents = total * 100;
+    int totalDollars = totalCents / 100;
+    totalCents = totalCents % 100;
     if (totalCents < 0)
     {
-        totalDollars -= totalCents / 100;
-        totalCents = totalCents % 100;
+        totalCents *= -1;
     }
     return Money(totalDollars, totalCents);
 }
-
-// operand types are: int * Money
 Money operator*(int i, Money m)
 {
     int totalCents = m.getCents() * i;
@@ -62,8 +58,6 @@ Money operator*(int i, Money m)
     }
     return Money(totalDollars, totalCents);
 }
-
-//operand types are: Money * double
 Money operator*(Money m, double d)
 {
     int totalCents = m.getCents() * d;
@@ -88,7 +82,6 @@ Money operator/(Money m1, double d)
     return Money(totalDollars, totalCents);
 }
 
-// get the % of m1
 Money operator%(int m1, Money m2)
 {
     int totalCents = m1 * m2.getCents() / 100;
@@ -101,7 +94,6 @@ Money operator%(int m1, Money m2)
     return Money(totalDollars, totalCents);
 }
 
-// operand types are: Money == Money
 bool operator==(Money m1, Money m2)
 {
     return (m1.getDollars() == m2.getDollars() && m1.getCents() == m2.getCents());
@@ -110,7 +102,7 @@ bool operator==(Money m1, Money m2)
 std::ostream &operator<<(std::ostream &os, Money money)
 {
 
-       if (money.getCents() < 10)
+    if (money.getCents() < 10 && money.getCents() > 0)
     {
         os << fixed << setprecision(3) << "$" << money.getDollars() << ".0" << money.getCents();
     }
