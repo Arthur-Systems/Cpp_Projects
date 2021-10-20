@@ -45,5 +45,5 @@ int main()
     cout << "The position of the highest rainfall is month " << positionOfLargest << "." << endl;
     // positionOfSmallest
     int positionOfSmallest = rainFall.getSmallestPosition();
-    cout << "The position of the lowest rainfall is month " << positionOfSmallest << "." << endl;
+    cout << "The position of the lowest rainfall is month " << positionOfSmallest + 1 << "." << endl;
 }

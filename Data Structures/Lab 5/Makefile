@@ -2,7 +2,7 @@ CXX = g++
 CXXFLAGS = -Wall -Werror -Wextra -pedantic -std=c++17 -g -fsanitize=address
 LDFLAGS =  -fsanitize=address
 
-SRC = LinkedList.h HWa5.cpp
+SRC = HWa5.cpp
 OBJ = $(SRC:.cc=.o)
 EXEC = Rain
 

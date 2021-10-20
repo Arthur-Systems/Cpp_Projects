@@ -39,7 +39,7 @@ public:
         }
 
     } // Destructor
-    void appendNode(T)
+    void appendNode(T value)
     {
         ListNode *newNode = new ListNode;
         newNode->value = value;
@@ -58,7 +58,7 @@ public:
             current->next = newNode;
         }
     }
-    void insertNode(T)
+    void insertNode(T value)
     {
         // insert a node at the beginning of the list
         ListNode *newNode = new ListNode;
@@ -67,7 +67,7 @@ public:
         head = newNode;
     }
 
-    void deleteNode(T)
+    void deleteNode(T value)
     {
         // remove a node from the list
         ListNode *current = head;
@@ -97,7 +97,7 @@ public:
         }
         cout << endl;
     }
-    int search(T)
+    int search(T value)
     {
         // search for a value in the list
         ListNode *current = head;
