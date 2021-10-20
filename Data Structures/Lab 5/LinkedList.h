@@ -1,10 +1,34 @@
 //
-// Purpose-
+// Purpose- this lab aims to improve our second lab
+// by using linked lists instead of arrays.
+// This lab is pretty much the same as the first lab,
+// except we are using linked lists instead of arrays.
 // @author Haichuan Wei
 // @version 1.0 9/21/21
-// @param
-// @return- 0 and prints out the sorted  data.
+// @class  LinkedList() - constructor
+// @class  ~LinkedList() - destructor
+// @class template appendNode(T) -
+// this function adds a node to the list this also
+// allocates more memory for the entire list.
+// @class template insertNode(T) - this function inserts a node to the list.
+// @class template deleteNode(T) - this function deletes a node from the list.
+// @class template search(T) - searches for a node in the list.
+// @class template getTotal() - adds up the total of all the nodes in the list.
+// @class function int numNodes() - returns the number of nodes in the list.
+// @class template T getAverage(); -
+// returns the average of all the nodes in the list.
+// @class template T getLargest() -
+// returns the largest value of all the nodes in the list.
+// @class template T getSmallest() -
+// returns the smallest value of all the nodes in the list.
+// @class function int getLargestPosition() -
+// returns the position of the largest value of all the nodes in the list.
+// @class function int getSmallestPosition() -
+// returns the position of the smallest value of all the nodes in the list.
+// @return- none
 //
+#ifndef __HWa5_LinkedList_h__
+#define __HWa5_LinkedList_h__
 #include <iostream>
 #include <cstdlib>
 #include <cmath>
@@ -69,23 +93,26 @@ public:
 
     void deleteNode(T value)
     {
-        // remove a node from the list
         ListNode *current = head;
         ListNode *previous = nullptr;
-        while (current->value != value)
+        while (current != nullptr)
         {
+            if (current->value == value)
+            {
+                if (previous == nullptr)
+                {
+                    head = current->next;
+                }
+                else
+                {
+                    previous->next = current->next;
+                }
+                delete current;
+                break;
+            }
             previous = current;
             current = current->next;
         }
-        if (previous == nullptr)
-        {
-            head = current->next;
-        }
-        else
-        {
-            previous->next = current->next;
-        }
-        delete current;
     }
     void displayList()
     { // display the list
@@ -99,7 +126,6 @@ public:
     }
     int search(T value)
     {
-        // search for a value in the list
         ListNode *current = head;
         int position = 0;
         while (current != nullptr)
@@ -125,7 +151,17 @@ public:
         return total;
     }
 
-    int numNodes();
+    int numNodes()
+    {
+        ListNode *current = head;
+        int count = 0;
+        while (current != nullptr)
+        {
+            count++;
+            current = current->next;
+        }
+        return count;
+    }
     T getAverage()
     {
         ListNode *current = head;
@@ -157,49 +193,60 @@ public:
     int getLargestPosition()
     {
         ListNode *current = head;
-        T largest = 0;
         int position = 0;
-        while (current != nullptr)
+        T largest = 0;
+        do
         {
             if (current->value > largest)
             {
                 largest = current->value;
-                position = current->value;
+                position = position;
+                position++;
             }
-            current = current->next;
-        }
+            else if (current->value < largest)
+            {
+                current = current->next;
+            }
+            else if (current->value == largest)
+            {
+                current = current->next;
+            }
+
+        } while (current != nullptr);
         return position;
     }
     T getSmallest()
     {
         ListNode *current = head;
-        T smallest = 0;
-        while (current != nullptr)
+        T smallest = current->value;
+        do
         {
             if (current->value < smallest)
             {
                 smallest = current->value;
             }
             current = current->next;
-        }
+        } while (current != nullptr);
         return smallest;
     }
 
     int getSmallestPosition()
     {
-        // get the position of the smallest value
         ListNode *current = head;
-        T smallest = 0;
         int position = 0;
-        while (current != nullptr)
+        T smallest = current->value;
+        do
         {
             if (current->value < smallest)
             {
                 smallest = current->value;
-                position = current->value;
+                position++;
             }
             current = current->next;
-        }
+
+        } while (current != nullptr);
         return position;
     }
 };
+
+#endif // __HWa5_LinkedList_h__
