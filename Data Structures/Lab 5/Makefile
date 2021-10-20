@@ -2,7 +2,7 @@ CXX = g++
 CXXFLAGS = -Wall -Werror -Wextra -pedantic -std=c++17 -g -fsanitize=address
 LDFLAGS =  -fsanitize=address
 
-SRC = rain.cpp Weia5.cpp
+SRC = LinkedList.h HWa5.cpp
 OBJ = $(SRC:.cc=.o)
 EXEC = Rain
 
@@ -13,8 +13,7 @@ $(EXEC): $(OBJ)
 
 
 run:
-
-./$(EXEC)
+	./$(EXEC)
 
 clean:
-	rm -rf $(OBJ) $(EXEC)
+	rm -rf $(EXEC)

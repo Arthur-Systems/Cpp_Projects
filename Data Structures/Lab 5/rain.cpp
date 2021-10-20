@@ -6,20 +6,20 @@
 #include "LinkedList.h"
 using namespace std;
 
-LinkedList<int>::LinkedList()
+void LinkedList<int>::appendNode(T)
 {
-    head = NULL;
-}
-
-LinkedList<int>::~LinkedList()
-{
-    ListNode<int> *temp;
-    while (head != NULL)
+    Node<int> *newNode = new Node<int>(T);
+    if (head == NULL)
     {
-        temp = head;
-        head = head->next;
-        delete temp;
+        head = newNode;
+        tail = newNode;
     }
+    else
+    {
+        tail->next = newNode;
+        tail = newNode;
+    }
+}
 }
 
 //void appendNode(T);
