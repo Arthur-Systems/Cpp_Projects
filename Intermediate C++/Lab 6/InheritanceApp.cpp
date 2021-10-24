@@ -1,4 +1,3 @@
-
 #include "printMeFirst.h"
 #include "Inheritance.h"
 int main()
@@ -22,5 +21,6 @@ int main()
     cout << endl;
     ron.display();
     cout << endl;
+
     return 0;
 }
