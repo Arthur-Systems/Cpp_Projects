@@ -1,21 +1,20 @@
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
+// Purpose- This lab is to practice the use of dynamic stack template class.
+// @author Haichuan Wei
+// @version 1.0 9/21/21
+//@function main() - the main function of the program
+// @class DynStk()- this is the constructor for the DynStk class
+// @class ~DynStk()- this is the destructor for the DynStk class
+// @class push(T elements)- this the dynamically adds an element to the 
+// @class pop()- this is the dynamically removes an element from the stack
+// @class top()- this returns the top element of the stack
+// @return- returns elements in the stack
 //
 
 #include <iostream>
 using namespace std;
 #ifndef _HW_DYNSTK_H_
 #define _HW_DYNSTK_H_
-
-//Define a dynamic stack template. 
 template <class T>
 class DynStk
 {
@@ -30,58 +29,35 @@ public:
     ~DynStk(){
         delete [] m_stack;
     }
-    //Push an element onto the stack
+
     void push(T element){
         if(m_top == m_size - 1){
-            cout << "Stack is full" << endl;
+            cout << endl<<"Attempting to POP again... The stack is empty." << endl;
             return;
         }
         m_top++;
         m_stack[m_top] = element;
     }
-    //Pop an element off the stack
     T pop(){
-        if(m_top == -1){
-            cout << "Stack is empty" << endl;
-            exit(1);
+        if(m_top == 0){
+            cout <<endl<< "Attempting to POP again... The stack is empty." << endl;
+            return 0;
         }
         return m_stack[m_top--];
     }
-    //Return the top element of the stack
     T top(){
         if(m_top == -1){
-            cout << "Stack is empty" << endl;
-            exit(1);
+
+            return 0;
         }
         return m_stack[m_top];
     }
-    //Return the size of the stack
-    int size(){
-        return m_size;
-    }
-    //Return true if the stack is empty
-    bool empty(){
-        return m_top == -1;
-    }
-    //Return true if the stack is full
-    bool full(){
-        return m_top == m_size - 1;
-    }
-    //Print the stack
-    void print(){
-        for(int i = 0; i <= m_top; i++){
-            cout << m_stack[i] << " ";
-        }
-        cout << endl;
+    
 
-      
-    }
 private:
     T *m_stack;
     int m_size;
     int m_top;
- 
-
 };
 
 #endif // _HW_DYNSTK_H_
