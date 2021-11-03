@@ -25,3 +25,12 @@ get_interest_rate()
 {
     return interest_rate;
 }
+double display_balance()
+{
+}
+void month_end()
+{
+
+    BankAccount::deposit(interest_rate * balance);
+    min_balance = balance;
+}
