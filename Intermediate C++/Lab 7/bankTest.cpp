@@ -18,7 +18,7 @@ using namespace std;
 
 int main ()
 {
-	printMeFirst("Ron Sha", "CS-116 - Bank Inheritance Lab");
+	printMeFirst("Haichuan Wei", "CS-116 - Bank Inheritance Lab");
     double amount;
 
     // Create accounts
