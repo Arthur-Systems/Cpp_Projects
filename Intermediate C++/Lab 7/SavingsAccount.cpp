@@ -1,36 +1,42 @@
 #include "SavingsAccount.h"
-SavingsAccount()
+SavingsAccount::SavingsAccount()
 {
     interest_rate = 0;
     min_balance = 0;
 }
-SavingsAccount(string acctNum, double b)
+SavingsAccount::SavingsAccount(string acctNum, double b, double i)
 {
-    accountNum = acctNum;
-    balance = b;
+    BankAccount(acctNum, b);
     interest_rate = i;
     min_balance = b;
 }
 
-withdraw(double amounts)
+void SavingsAccount::withdraw(double amounts)
 {
     BankAccount::withdraw(amounts);
-    check_for_fee();
+    if (BankAccount::get_balance() < min_balance)
+    {
+        min_balance = BankAccount::get_balance();
+    }
 }
 
-void set_interest_rate()
+void SavingsAccount::set_interest_rate(int rate)
 {
+    rate = interest_rate;
 }
-get_interest_rate()
+double SavingsAccount::get_interest_rate()
 {
     return interest_rate;
 }
-double display_balance()
+void SavingsAccount::display_balance()
 {
+    cout << "Account:" << BankAccount::get_account_number() << "'s interest rate is " << interest_rate << endl;
+    cout << BankAccount::get_account_number() << "'s Balance is $" << min_balance << endl;
 }
-void month_end()
+void SavingsAccount::month_end()
 {
-
-    BankAccount::deposit(interest_rate * balance);
-    min_balance = balance;
+    BankAccount::deposit(min_balance);
+    double interest = min_balance * interest_rate / 100;
+    BankAccount::deposit(interest);
+    min_balance = BankAccount::get_balance();
 }

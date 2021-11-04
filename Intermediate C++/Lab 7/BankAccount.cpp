@@ -1,44 +1,45 @@
 #include "BankAccount.h"
-BankAccount()
+BankAccount::BankAccount()
 {
     balance = 0;
     accountNum = "NA";
-};
+}
 
-BankAccount(string acct, double a)
+BankAccount::BankAccount(string acct, double a)
 {
-    accoutNum = acct;
+    accountNum = acct;
     balance = a;
-};
-void deposit(double amount)
+}
+void BankAccount::deposit(double amount)
 {
     balance += amount;
-};
-
-void withdraw(double amount)
+}
+void BankAccount::withdraw(double amount)
 {
     if (amount > balance)
     {
-        cout << "Insufficient funds" << endl;
+        cout << "Insufficient funds! Trying to remove $" << amount << " But only $" << balance << "available! "
+             << "Not removing anything!" << endl;
     }
     else
     {
         balance -= amount;
     }
-};
-double get_balance()
+}
+
+double BankAccount::get_balance()
 {
     return balance;
-};
-void display_balance()
+}
+void BankAccount::display_balance()
 {
-    cout << "The balance is " << balance << endl;
-};
-void set_account_balance(string n)
+    cout << accountNum << "'s balance is $" << balance << endl;
+}
+void BankAccount::set_account_number(string n)
 {
     accountNum = n;
-};
-void get_account_balance()
+}
+string BankAccount::get_account_number()
 {
     return accountNum;
-};
+}
