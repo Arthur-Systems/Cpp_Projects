@@ -1,0 +1,19 @@
+{
+    "files.associations": {
+        "stack": "cpp",
+        "string": "cpp",
+        "filesystem": "cpp",
+        "iosfwd": "cpp",
+        "ios": "cpp",
+        "__locale": "cpp",
+        "__string": "cpp",
+        "string_view": "cpp",
+        "iostream": "cpp",
+        "__node_handle": "cpp",
+        "__split_buffer": "cpp",
+        "array": "cpp",
+        "iterator": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp"
+    }
+}
