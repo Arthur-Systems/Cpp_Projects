@@ -1,12 +1,40 @@
 #include "HWparen.h"
-
-parenthesis::parenthesis()
+parentheses::parentheses()
 {
-    left = NULL;
-    right = NULL;
 }
-parenthesis::~parenthesis()
+parentheses::~parentheses() {}
+void parentheses::setString(string s)
 {
-    delete left;
-    delete right;
+    str = s;
+}
+
+bool parentheses::isBalanced()
+{
+    stack<char> paren;
+    for (int i = 0; i < str.length(); i++)
+    {
+        if (str[i] == '(')
+        {
+            paren.push(str[i]);
+        }
+        else if (str[i] == ')')
+        {
+            if (paren.empty())
+            {
+                return false;
+            }
+            else
+            {
+                paren.pop();
+            }
+        }
+    }
+    if (paren.empty())
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }

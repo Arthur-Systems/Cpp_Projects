@@ -2,9 +2,9 @@ CXX = g++
 CXXFLAGS = -Wall -Werror -Wextra -pedantic -std=c++17 -g -fsanitize=address
 LDFLAGS =  -fsanitize=address
 
-SRC = HWa7.cpp HWparen.cpp
+SRC = HWChain.cpp HWa8.cpp
 OBJ = $(SRC:.cc=.o)
-EXEC = Parentheses
+EXEC = Chaining
 
 all: $(EXEC)
 
