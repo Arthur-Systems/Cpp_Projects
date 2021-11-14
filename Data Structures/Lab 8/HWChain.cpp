@@ -2,7 +2,6 @@
 HWChain::HWChain()
 {
 }
-
 HWChain::~HWChain()
 {
     for (int i = 0; i < this->size; i++)
@@ -17,9 +16,9 @@ HWChain::~HWChain()
     }
     delete[] this->table;
 }
-
-void HWChain::setSize(int size)
+void HWChain::SetTableSize(int size)
 {
+    // make dynamic size of table
     this->size = size;
     this->table = new Node *[size];
     for (int i = 0; i < size; i++)
@@ -46,10 +45,8 @@ void HWChain::insert(int key, int value)
     newNode->next = this->table[index];
     this->table[index] = newNode;
 }
-
 int HWChain::search(int key)
 {
-
     int index = key % this->size;
     Node *temp = this->table[index];
     while (temp != NULL)
@@ -60,11 +57,33 @@ int HWChain::search(int key)
         }
         temp = temp->next;
     }
-
     return -1;
 }
-
-void HWChain::printTable()
+void HWChain::remove(int key)
+{
+    int index = key % this->size;
+    Node *temp = this->table[index];
+    Node *prev = NULL;
+    while (temp != NULL)
+    {
+        if (temp->key == key)
+        {
+            if (prev == NULL)
+            {
+                this->table[index] = temp->next;
+            }
+            else
+            {
+                prev->next = temp->next;
+            }
+            delete temp;
+            return;
+        }
+        prev = temp;
+        temp = temp->next;
+    }
+}
+void HWChain::print()
 {
     for (int i = 0; i < this->size; i++)
     {

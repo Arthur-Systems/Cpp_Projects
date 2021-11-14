@@ -1,0 +1,10 @@
+Hillary Clinton F 1947 10 26 
+Bill Clinton M 1946 08 19
+George Bush M 1946 07 06
+Laura Bush F 1946 11 04
+Barack Obama    M 1961 08 04 
+Michelle Obama  F 1964 01 17
+Donald  Trump   M 1946 06 14 
+Melania Trump   F 1970 04 26 
+Joe Biden  M 1942 11 20
+Jill Biden F 1951 06 03
