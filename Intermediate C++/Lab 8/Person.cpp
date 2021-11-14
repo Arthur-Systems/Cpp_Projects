@@ -13,9 +13,18 @@ Person::Person(string fn, string ln, string s, int m, int d, int y)
     month = d;
     day = y;
 }
+
 void const Person::printInfo()
 {
-    cout << fname << "\t" << lname << "\t" << gender << "\t" << month << "\t" << day << "\t" << year << endl;
+    if (fname.length() < 8)
+    {
+        cout << fname << "\t\t";
+    }
+    else
+    {
+        cout << fname << "\t";
+    }
+    cout << lname << "\t" << gender << "\t" << month << "\t" << day << "\t" << year << endl;
 }
 
 int Person::getMonth()
