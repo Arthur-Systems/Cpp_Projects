@@ -23,11 +23,13 @@ void readInfo(string filename, vector<Person *> &fptr)
     string line;
     while (getline(infile, line))
     {
+
         stringstream ss(line);
         string fn, ln, s;
         int m, d, y;
         ss >> fn >> ln >> s >> m >> d >> y;
         Person *p = new Person(fn, ln, s, m, d, y);
+
         fptr.push_back(p);
     }
     infile.close();
@@ -39,8 +41,8 @@ void printSortInfo(vector<Person *> &fptr, int sortType)
     {
         for (int i = 0; i < fptr.size(); i++)
         {
-            // no sort
-                }
+            fptr[i]->printInfo();
+        }
     }
     else if (sortType = 0)
     {
@@ -49,7 +51,7 @@ void printSortInfo(vector<Person *> &fptr, int sortType)
              { return a->getMonth() < b->getMonth(); });
         for (int i = 0; i < fptr.size(); i++)
         {
-            cout << fptr[i]->getFirstName() << " " << fptr[i]->getLastName() << " " << fptr[i]->getGender() << " " << fptr[i]->getMonth() << " " << fptr[i]->getDay() << " " << fptr[i]->getYear() << endl;
+            fptr[i]->printInfo();
         }
     }
 }
