@@ -7,6 +7,6 @@ int main()
     readInfo("person.txt", fptr);
     printSortInfo(fptr, -1); // no sort
     printSortInfo(fptr, 0);  // sorted by month
-    // printSortInfo(fptr, 1);  // sorted by year
+    printSortInfo(fptr, 1);  // sorted by year
     return 0;
 }
