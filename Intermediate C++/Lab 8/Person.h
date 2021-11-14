@@ -1,18 +1,19 @@
 #ifndef _Person_h
 #define _Person_h
-#include "ReadFile.h"
+#include <string>
+
 class Person
 {
 public:
-    Person(string fn, string ln, string s, int m, int d, int y);
+    Person(std::string fn, std::string ln, std::string s, int m, int d, int y);
     void const printInfo();
     int getMonth(); // return month
     int getYear();  // return year
-    string getLastName();
-    string getFirstName();
+    std::string getLastName();
+    std::string getFirstName();
 
 private:
-    string fname, lname, gender;
+    std::string fname, lname, gender;
     int month, day, year;
 };
 

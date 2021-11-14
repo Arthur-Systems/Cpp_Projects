@@ -1,6 +1,7 @@
 #ifndef _ReadFile_h
 #define _ReadFile_h
 #include <fstream>
+#include <functional>
 #include <sstream>
 #include <iostream>
 #include <string>
@@ -37,23 +38,24 @@ void readInfo(string filename, vector<Person *> &fptr)
 void printSortInfo(vector<Person *> &fptr, int sortType)
 {
 
-    if (sortType == -1)
-    {
-        for (int i = 0; i < fptr.size(); i++)
-        {
-            fptr[i]->printInfo();
-        }
-    }
-    else if (sortType = 0)
-    {
-        // sorted by month
-        sort(fptr.begin(), fptr.end(), [](Person *a, Person *b)
-             { return a->getMonth() < b->getMonth(); });
-        for (int i = 0; i < fptr.size(); i++)
-        {
-            fptr[i]->printInfo();
-        }
-    }
+    // if (sortType == -1)
+    // {
+    //     for (int i = 0; i < fptr.size(); i++)
+    //     {
+    //         fptr[i]->printInfo();
+    //     }
+    // }
+    // else if (sortType == 0)
+    // {
+    // sorted by month
+    sort(fptr.begin(), fptr.end(),
+         [](Person *a, Person *b)
+         { return a->getMonth() < b->getMonth(); });
+    //     for (int i = 0; i < fptr.size(); i++)
+    //     {
+    //         fptr[i]->printInfo();
+    //     }
+    // }
 }
 
 #endif // _ReadFile_h

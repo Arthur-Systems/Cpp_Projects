@@ -1,6 +1,6 @@
 CXX = g++
-CXXFLAGS = -Wall -Werror -Wextra -pedantic -std=c++17 -g -fsanitize=address
-LDFLAGS =  -fsanitize=address
+CXXFLAGS = -Wall -Werror -Wextra -pedantic -std=c++17 -g -fsanitize=address 
+LDFLAGS =  -fsanitize=address -std=c++17
 
 SRC = Person.cpp printMeFirst.cpp ReadFile.cpp
 OBJ = $(SRC:.cc=.o)

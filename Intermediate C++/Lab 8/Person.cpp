@@ -1,5 +1,9 @@
 #include "Person.h"
 
+#include <iostream>
+
+using namespace std;
+
 Person::Person(string fn, string ln, string s, int m, int d, int y)
 {
     fname = fn;
