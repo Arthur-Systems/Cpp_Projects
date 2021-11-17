@@ -1,9 +1,6 @@
 #include "Person.h"
-
 #include <iostream>
-
 using namespace std;
-
 Person::Person(string fn, string ln, string s, int m, int d, int y)
 {
     fname = fn;
@@ -13,7 +10,6 @@ Person::Person(string fn, string ln, string s, int m, int d, int y)
     month = d;
     day = y;
 }
-
 void const Person::printInfo()
 {
     if (fname.length() < 8)
