@@ -84,10 +84,8 @@ void Wine::printInfo()
 	/*
 	 * use setw() function to make the output print out
 	 * nicely formated.
-	cout <<  name <<   type;
-	cout <<   price << " ; Rating: " << score << "  Year: "
-		  << vintage << endl;
 	 */
-	cout << setw(20) << left << name << setw(10) << left << type << setw(10) << left << price << " ; Rating: " << score << "  Year: "
+
+	cout << setw(35) << left << name << right << type << right << " " << setw(1) << price << left << " ; Rating: " << score << left << "  Year: "
 		 << vintage << endl;
 }

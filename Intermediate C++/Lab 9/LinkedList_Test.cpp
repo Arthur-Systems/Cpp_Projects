@@ -1,3 +1,10 @@
+/*
+Purpose- This is the test file. This file has the main function that will test the class.
+It provies data that is suppoiled to the rest of the program.
+@author Haichuan Wei
+@version 1.0 11/21/21
+!All Functions and Parameters are already defined in the file Below.
+*/
 
 #include <iostream>
 #include <typeinfo>
@@ -12,8 +19,8 @@ bool DEBUG = true;
 
 void printMeFirst(string name, string courseInfo);
 
-template <class T>
-void printNoteInfo(List<T> &nodeList);
+template <class NODETYPE>
+void printNoteInfo(List<NODETYPE> &nodeList);
 void printWineInfo(List<Wine> &wineList);
 void printPersonInfo(List<Person> &personList);
 
@@ -29,12 +36,10 @@ int main()
    List<int> list1; // storage for first list
    List<int> list2; // storage for second list
    Person p;
-
    // use data type Person for the Linked List
    List<Person> personList;
 
    p.set_info("Ron", 22);
-
    personList.insertAtFront(p, 0);
 
    p.set_info("Sha", 30);
@@ -47,8 +52,7 @@ int main()
       cout << "\n***Print using printNoteInfo***\n";
    printNoteInfo(personList);
 
-   /* use the linked list for Wine data type
-    */
+   /* use the linked list for Wine data type*/
    Wine w, temp;
 
    List<Wine> wineList;

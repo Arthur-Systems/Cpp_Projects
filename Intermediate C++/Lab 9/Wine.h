@@ -2,7 +2,7 @@
 Purpose- This file contains the class definition for the Wine class.
 @author Haichuan Wei
 @version 1.0 11/21/21
-@class Wine(); - This class is used to create a wine object.
+@class Wine() - This class is used to create a wine object.
 !All Functions and Parameters are already defined in the file Below.
 */
 #ifndef WINE_H
