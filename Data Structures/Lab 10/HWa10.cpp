@@ -5,17 +5,10 @@
 #include <cstdlib>
 #include <algorithm>
 #include <vector>
-#include <iomanip>
-#include <cmath>
-#include <cctype>
-#include <cstring>
-#include <cstdio>
-#include <cstdlib>
-#include <ctime>
-#include <iomanip>
 
 using namespace std;
-// implement a binary tree whose nodes hold an instance of the EmployeeInfo class.
+// be able to insert both a string and an int into the tree
+// be able to print the tree in order
 template <typename T>
 class HWBinaryTree
 {
@@ -25,54 +18,48 @@ private:
         T data;
         Node *left;
         Node *right;
-        Node(const T &d = T(), Node *l = NULL, Node *r = NULL)
-        {
-            data = d;
-            left = l;
-            right = r;
-        }
     };
     Node *root;
     int size;
-    void insert(Node *&, const T &);
-    void makeEmpty(Node *&);
+    // insert a string and an int into the tree
+    void insert(T data, Node *&node)
+    {
+        if (node == NULL)
+        {
+            node = new Node;
+            node->data = data;
+            node->left = NULL;
+            node->right = NULL;
+            size++;
+        }
+        else if (data < node->data)
+        {
+            insert(data, node->left);
+        }
+        else if (data > node->data)
+        {
+            insert(data, node->right);
+        }
+    }
 
 public:
     HWBinaryTree()
     {
         root = NULL;
+        size = 0;
     }
-    HWBinaryTree(const HWBinaryTree &rhs)
-    {
-        root = NULL;
-        *this = rhs;
-    }
-    ~HWBinaryTree()
-    {
-        makeEmpty();
-    }
-
-    HWBinaryTree &operator=(const HWBinaryTree &rhs)
-    {
-        if (this != &rhs)
-        {
-            makeEmpty();
-            root = clone(rhs.root);
-        }
-        return *this;
-    }
-
-    void makeEmpty()
-    {
-        makeEmpty(root);
-    }
+    HWBinaryTree(const HWBinaryTree &);
+    ~HWBinaryTree();
+    HWBinaryTree &operator=(const HWBinaryTree &);
 
     void insert(T data)
     {
-
-        insert(root, data);
+        insert(data, root);
     }
+
+    void remove(T);
 };
+
 class EmployeeInfo
 {
 private:
@@ -81,39 +68,39 @@ private:
 
 public:
     // The nodes should be sorted on the EmpoyeeID number.
-    EmployeeInfo(const string &n, int id)
+    EmployeeInfo(string, int)
     {
-        name = n;
-        employeeID = id;
+        name = name;
+        employeeID = employeeID;
     }
-    EmployeeInfo(const EmployeeInfo &rhs)
+    EmployeeInfo(const EmployeeInfo &)
     {
-        name = rhs.name;
-        employeeID = rhs.employeeID;
+        name = name;
+        employeeID = employeeID;
     }
-    EmployeeInfo &operator=(const EmployeeInfo &rhs)
+    ~EmployeeInfo()
     {
-        if (this != &rhs)
-        {
-            name = rhs.name;
-            employeeID = rhs.employeeID;
-        }
+        cout << "Destructor called" << endl;
+    }
+    EmployeeInfo &operator=(const EmployeeInfo &)
+    {
+        name = name;
+        employeeID = employeeID;
         return *this;
     }
-    bool operator<(const EmployeeInfo &rhs) const
+    string getName() const
     {
-        return employeeID < rhs.employeeID;
+        return name;
     }
-    bool operator>(const EmployeeInfo &rhs) const
+    int getID() const
     {
-        return employeeID > rhs.employeeID;
+        return employeeID;
     }
 };
 int main()
 {
     HWBinaryTree<EmployeeInfo> tree;
     EmployeeInfo e1("John", 1);
-    EmployeeInfo e2("Mary", 2);
 
     tree.insert(e1);
 }
