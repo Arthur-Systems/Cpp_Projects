@@ -1,233 +1,186 @@
+/*
+@author Haichuan Wei
+@version 1.0 11/23/21
+@Class HWBinaryTree is a class that implements a binary tree.
+This class is template meaning that it can be used to store any type of data.
+@function HWBinaryTree() is the default constructor. Sets the root to NULL.
+@function insert(data) inserts a node with the given value into the tree.
+        @param data is the value of the node to be inserted.
+@function deleteNode(data) removes a node with the given value from the tree.
+        @param data is the value of the node to be removed.
+@function search(data) searches for a node with the given value in the tree.
+        @param data is the value of the node to be searched for.
+@function preOrder() Traverses the tree in "pre-order".
+@function inOrder() Traverses the tree in "in-order".
+@function postOrder() Traverses the tree in "post-order".
+
+*/
+
+#ifndef _HW_BINARY_TREE_H_
+#define _HW_BINARY_TREE_H_
 #include <iostream>
 #include <string>
-#include <cstdlib>
-#include <cmath>
-#include <vector>
-
 using namespace std;
-template <class T>
-class BinaryTree
+template <typename T>
+class HWBinaryTree
 {
-public:
-    // inserting an element into the tree, deleting an element from the tree, searching for an element in the tree and support pre-order, in-order, and post-order traversals of the tree.
-    void insert(T)
-    {
-        cout << "inserting" << endl;
-        if (root == NULL)
-        {
-            root = new Node<T>(data);
-        }
-        else
-        {
-            Node<T> *current = root;
-            Node<T> *parent;
-            while (true)
-            {
-                parent = current;
-                if (data < current->data)
-                {
-                    current = current->left;
-                    if (current == NULL)
-                    {
-                        parent->left = new Node<T>(data);
-                        break;
-                    }
-                }
-                else
-                {
-                    current = current->right;
-                    if (current == NULL)
-                    {
-                        parent->right = new Node<T>(data);
-                        break;
-                    }
-                }
-            }
-        }
-    }
-    void deleteNode(T)
-    {
-        cout << "deleting" << endl;
-        // deleting an element from the tree
-        if (root == NULL)
-        {
-            return;
-        }
-        else
-        {
-            Node<T> *current = root;
-            Node<T> *parent = root;
-            bool isLeftChild = true;
-            while (current->data != data)
-            {
-                parent = current;
-                if (data < current->data)
-                {
-                    isLeftChild = true;
-                    current = current->left;
-                }
-                else
-                {
-                    isLeftChild = false;
-                    current = current->right;
-                }
-                if (current == NULL)
-                {
-                    return;
-                }
-            }
-            // if current has no children
-            if (current->left == NULL && current->right == NULL)
-            {
-                if (current == root)
-                {
-                    root = NULL;
-                }
-                else if (isLeftChild)
-                {
-                    parent->left = NULL;
-                }
-                else
-                {
-                    parent->right = NULL;
-                }
-            }
-            // if current has only right child
-            else if (current->left == NULL)
-            {
-                if (current == root)
-                {
-                    root = current->right;
-                }
-                else if (isLeftChild)
-                {
-                    parent->left = current->right;
-                }
-                else
-                {
-                    parent->right = current->right;
-                }
-            }
-            // if current has only left child
-            else if (current->right == NULL)
-            {
-                if (current == root)
-                {
-                    root = current->left;
-                }
-                else if (isLeftChild)
-                {
-                    parent->left = current->left;
-                }
-                else
-                {
-                    parent->right = current->left;
-                }
-            }
-            // if current has both children
-            else
-            {
-                Node<T> *successor = getSuccessor(current);
-                if (current == root)
-                {
-                    root = successor;
-                }
-                else if (isLeftChild)
-                {
-                    parent->left = successor;
-                }
-                else
-                {
-                    parent->right = successor;
-                }
-                successor->left = current->left;
-            }
-        }
-    }
-    bool search(T)
-    {
-        // searching for an element in the tree
-        Node<T> *current = root;
-        while (current->data != data)
-        {
-            if (data < current->data)
-            {
-                current = current->left;
-            }
-            else
-            {
-                current = current->right;
-            }
-            if (current == NULL)
-            {
-                return false;
-            }
-        }
-        return true;
-    }
-    void preOrder(Node<T> *node)
-    {
-        if (node != NULL)
-        {
-            cout << node->data << " ";
-            preOrder(node->left);
-            preOrder(node->right);
-        }
-    }
-    void inOrder(Node<T> *node)
-    {
-        if (node != NULL)
-        {
-            inOrder(node->left);
-            cout << node->data << " ";
-            inOrder(node->right);
-        }
-    }
-    void postOrder(Node<T> *node)
-    {
-        if (node != NULL)
-        {
-            postOrder(node->left);
-            postOrder(node->right);
-            cout << node->data << " ";
-        }
-    }
-    void PrintTree(Node<T> *node)
-    {
-        if (node == NULL)
-        {
-            return;
-        }
-        PrintTree(node->left);
-        cout << node->data << " ";
-        PrintTree(node->right);
-    }
-
-    // constructor
-    BinaryTree()
-    {
-        root = NULL;
-    }
-    // destructor
-    ~BinaryTree()
-    {
-        delete root;
-    }
-    // private variables
 private:
-    // root node
     struct Node
     {
         T data;
         Node *left;
         Node *right;
+        Node(T data)
+        {
+            this->data = data;
+            this->left = NULL;
+            this->right = NULL;
+        }
     };
     Node *root;
-    // private functions
-    void insert(T, Node *);
-    void deleteNode(T, Node *);
-    bool search(T, Node *);
-    void preOrderTraversal(Node *);
-    void inOrderTraversal(Node *);
-    void postOrderTraversal(Node *);
+    void insert(Node *&node, T data)
+    {
+        if (node == NULL)
+        {
+            node = new Node(data);
+        }
+        else if (data < node->data)
+        {
+            insert(node->left, data);
+        }
+        else
+        {
+            insert(node->right, data);
+        }
+    }
+    void deleteNode(Node *&node, T data)
+    {
+        if (node == NULL)
+        {
+            return;
+        }
+        else if (data < node->data)
+        {
+            deleteNode(node->left, data);
+        }
+        else if (data > node->data)
+        {
+            deleteNode(node->right, data);
+        }
+        else
+        {
+            if (node->left == NULL && node->right == NULL)
+            {
+                delete node;
+                node = NULL;
+            }
+            else if (node->left == NULL)
+            {
+                Node *temp = node;
+                node = node->right;
+                delete temp;
+            }
+            else if (node->right == NULL)
+            {
+                Node *temp = node;
+                node = node->left;
+                delete temp;
+            }
+            else
+            {
+                Node *temp = node->right;
+                while (temp->left != NULL)
+                {
+                    temp = temp->left;
+                }
+                node->data = temp->data;
+                deleteNode(node->right, temp->data);
+            }
+        }
+    }
+    void search(Node *node, T data)
+    {
+        if (node == NULL)
+        {
+            cout << data << " NOT FOUND!" << endl;
+        }
+        else if (data < node->data)
+        {
+            search(node->left, data);
+        }
+        else if (data > node->data)
+        {
+            search(node->right, data);
+        }
+        else if (data == node->data)
+        {
+            cout << data << " Found!" << endl;
+        }
+    }
+    void $(Node *node)
+    {
+        if (node == NULL)
+        {
+            return;
+        }
+        cout << node->data << " ";
+        preOrder(node->left);
+        preOrder(node->right);
+    }
+    void inOrder(Node *node)
+    {
+
+        if (node == NULL)
+        {
+            return;
+        }
+        inOrder(node->left);
+        cout << node->data << " ";
+        inOrder(node->right);
+    }
+    void postOrder(Node *node)
+    {
+        if (node == NULL)
+        {
+            return;
+        }
+        postOrder(node->left);
+        postOrder(node->right);
+        cout << node->data << " ";
+    }
+
+public:
+    HWBinaryTree()
+    {
+        root = NULL;
+    }
+    void insert(T data)
+    {
+        insert(root, data);
+    }
+    void deleteNode(T data)
+    {
+        cout << "Removeing " << data << endl;
+        deleteNode(root, data);
+    }
+    void search(T data)
+    {
+        search(root, data);
+    }
+    void preOrder()
+    {
+        cout << "Travering and displaying the tree using Preorder: " << endl;
+        preOrder(root);
+    }
+    void inOrder()
+    {
+        cout << "Travering and displaying the tree using Inorder: " << endl;
+        inOrder(root);
+    }
+    void postOrder()
+    {
+        cout << "Travering and displaying the tree using Postorder: " << endl;
+        postOrder(root);
+    }
 };
+#endif // _HW_BINARY_TREE_H_

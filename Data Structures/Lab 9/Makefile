@@ -1,6 +1,5 @@
 CXX = g++
-CXXFLAGS = -Wall -Werror -Wextra -pedantic -std=c++11 -g -fsanitize=address
-LDFLAGS =  -fsanitize=address
+CXXFLAGS = -std=c++17
 
 SRC = HWa9.cpp
 OBJ = $(SRC:.cc=.o)
