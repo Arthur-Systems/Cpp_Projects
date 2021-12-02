@@ -7,8 +7,6 @@
 #include <vector>
 
 using namespace std;
-// be able to insert both a string and an int into the tree
-// be able to print the tree in order
 template <typename T>
 class HWBinaryTree
 {
@@ -18,27 +16,74 @@ private:
         T data;
         Node *left;
         Node *right;
+        Node(T data)
+        {
+            this->data = data;
+            this->left = NULL;
+            this->right = NULL;
+        }
     };
     Node *root;
     int size;
-    // insert a string and an int into the tree
-    void insert(T data, Node *&node)
+    void insert(Node *&node, T data)
     {
         if (node == NULL)
         {
-            node = new Node;
-            node->data = data;
-            node->left = NULL;
-            node->right = NULL;
+            cout << "insert data: " << data->GetValue() << endl;
+            node = new Node(data);
             size++;
         }
-        else if (data < node->data)
+        else if (data->GetValue() < node->data->GetValue())
         {
-            insert(data, node->left);
+            cout << "insert data: " << data->GetValue() << endl;
+            insert(node->left, data);
         }
-        else if (data > node->data)
+        else if (data->GetValue() > node->data->GetValue())
         {
-            insert(data, node->right);
+            cout << "insert data: " << data->GetValue() << endl;
+            insert(node->right, data);
+        }
+    }
+
+    void search(Node *node, T data)
+    {
+        if (node != NULL)
+        {
+            if (node->data == data)
+            {
+                cout << "Found" << endl;
+            }
+            else if (data < node->data)
+            {
+                search(node->left, data);
+            }
+            else if (data > node->data)
+            {
+                search(node->right, data);
+            }
+        }
+        else
+        {
+            cout << "Not Found" << endl;
+        }
+    }
+    void inOrder(Node *node, vector<T> &vec)
+    {
+        if (node == NULL)
+        {
+            return;
+        }
+        inOrder(node->left, vec);
+        vec.push_back(node->data);
+        inOrder(node->right, vec);
+    }
+    void inOrder(Node *node)
+    {
+        if (node != NULL)
+        {
+            inOrder(node->left);
+            cout << node->data << " ";
+            inOrder(node->right);
         }
     }
 
@@ -48,16 +93,34 @@ public:
         root = NULL;
         size = 0;
     }
-    HWBinaryTree(const HWBinaryTree &);
-    ~HWBinaryTree();
-    HWBinaryTree &operator=(const HWBinaryTree &);
+    HWBinaryTree(T data)
+    {
+        root = new Node(data);
+        size = 1;
+    }
 
     void insert(T data)
     {
-        insert(data, root);
+        insert(root, data);
     }
 
-    void remove(T);
+    Node *getRoot()
+    {
+        return root;
+    }
+
+    void search(T data)
+    {
+        search(root, data);
+    }
+    void inOrder()
+    {
+        inOrder(root);
+    }
+    void inOrder(vector<T> &vec)
+    {
+        inOrder(root, vec);
+    }
 };
 
 class EmployeeInfo
@@ -67,40 +130,45 @@ private:
     int employeeID;
 
 public:
-    // The nodes should be sorted on the EmpoyeeID number.
-    EmployeeInfo(string, int)
+    HWBinaryTree<EmployeeInfo *> tree;
+    EmployeeInfo(string name, int employeeID)
     {
-        name = name;
-        employeeID = employeeID;
+        this->name = name;
+        this->employeeID = employeeID;
     }
-    EmployeeInfo(const EmployeeInfo &)
-    {
-        name = name;
-        employeeID = employeeID;
-    }
-    ~EmployeeInfo()
-    {
-        cout << "Destructor called" << endl;
-    }
-    EmployeeInfo &operator=(const EmployeeInfo &)
-    {
-        name = name;
-        employeeID = employeeID;
-        return *this;
-    }
-    string getName() const
-    {
-        return name;
-    }
-    int getID() const
+
+    int GetValue()
     {
         return employeeID;
+    }
+
+    void print()
+    {
+        cout << "ID Number:" << employeeID << "\t Name:" << name << endl;
     }
 };
 int main()
 {
-    HWBinaryTree<EmployeeInfo> tree;
-    EmployeeInfo e1("John", 1);
+    HWBinaryTree<EmployeeInfo *> tree;
 
+    EmployeeInfo *e1 = new EmployeeInfo("Bob", 2);
     tree.insert(e1);
+    EmployeeInfo *e2 = new EmployeeInfo("Bill", 3);
+    tree.insert(e2);
+    EmployeeInfo *e3 = new EmployeeInfo("Anish ❤️ ", 1);
+    tree.insert(e3);
+    cout << endl;
+    tree.getRoot()->data->print();
+    tree.getRoot()->right->data->print();
+    tree.getRoot()->left->data->print();
+    cout << endl;
+    vector<EmployeeInfo *> vec;
+    tree.inOrder(vec);
+    for (int i = 0; i < vec.size(); i++)
+    {
+        vec[i]->print();
+    }
+    // tree.getRoot()->right->data->print(); // WILL CASE A SEG FAULT CUZ NO DATA IS THERE
+
+    tree.search(e1);
 }
