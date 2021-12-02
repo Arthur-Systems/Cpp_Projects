@@ -18,8 +18,12 @@ This class is template meaning that it can be used to store any type of data.
 
 #ifndef _HW_BINARY_TREE_H_
 #define _HW_BINARY_TREE_H_
+#include "HWEmployee.h"
 #include <iostream>
 #include <string>
+#include <cstdlib>
+#include <algorithm>
+#include <vector>
 using namespace std;
 template <typename T>
 class HWBinaryTree
@@ -38,18 +42,22 @@ private:
         }
     };
     Node *root;
+    int size;
     void insert(Node *&node, T data)
     {
         if (node == NULL)
         {
             node = new Node(data);
+            size++;
         }
-        else if (data < node->data)
+        else if (data->GetID() < node->data->GetID())
         {
+
             insert(node->left, data);
         }
-        else
+        else if (data->GetID() > node->data->GetID())
         {
+
             insert(node->right, data);
         }
     }
@@ -59,11 +67,11 @@ private:
         {
             return;
         }
-        else if (data < node->data)
+        else if (data->GetID() < node->data->GetID())
         {
             deleteNode(node->left, data);
         }
-        else if (data > node->data)
+        else if (data->GetID() > node->data->GetID())
         {
             deleteNode(node->right, data);
         }
@@ -73,18 +81,21 @@ private:
             {
                 delete node;
                 node = NULL;
+                size--;
             }
             else if (node->left == NULL)
             {
                 Node *temp = node;
                 node = node->right;
                 delete temp;
+                size--;
             }
             else if (node->right == NULL)
             {
                 Node *temp = node;
                 node = node->left;
                 delete temp;
+                size--;
             }
             else
             {
@@ -98,27 +109,28 @@ private:
             }
         }
     }
-    void search(Node *node, T data)
+    void search(Node *&node, T data)
     {
         if (node == NULL)
         {
-            cout << data << " NOT FOUND!" << endl;
+            cout << "Employee " << data->GetID() << " Not found!" << endl;
         }
-        else if (data < node->data)
+        else if (data->GetID() < node->data->GetID())
         {
             search(node->left, data);
         }
-        else if (data > node->data)
+        else if (data->GetID() > node->data->GetID())
         {
             search(node->right, data);
         }
-        else if (data == node->data)
+        else
         {
-            cout << data << " Found!" << endl;
+            cout << "Employee Found" << endl;
+            cout << "ID Number:" << node->data->GetID()
+                 << "\t Name:" << node->data->GetName() << endl;
         }
     }
-
-    void preOrder(Node *node)
+    void $(Node *node)
     {
         if (node == NULL)
         {
@@ -150,26 +162,51 @@ private:
         cout << node->data << " ";
     }
 
+    void inOrder(Node *node, vector<T> &vec)
+    {
+        if (node != NULL)
+        {
+            inOrder(node->left, vec);
+            vec.push_back(node->data);
+            inOrder(node->right, vec);
+        }
+    }
+
 public:
     HWBinaryTree()
     {
         root = NULL;
+        size = 0;
     }
+    HWBinaryTree(T data)
+    {
+        root = new Node(data);
+        size = 1;
+    }
+
     void insert(T data)
     {
         insert(root, data);
     }
-    // overloaded insert function
     void deleteNode(T data)
     {
-        cout << "Removeing " << data << endl;
         deleteNode(root, data);
     }
+
     void search(T data)
     {
         search(root, data);
     }
 
+    Node *getRoot()
+    {
+        return root;
+    }
+
+    void inOrder(vector<T> &vec)
+    {
+        inOrder(root, vec);
+    }
     void preOrder()
     {
         cout << "Travering and displaying the tree using Preorder: " << endl;
@@ -186,37 +223,5 @@ public:
         postOrder(root);
     }
 };
-// Use the binary tree template designed in lab assignment 9 to implement a binary tree whose nodes hold an instance of the EmployeeInfo class.
-
-class EmployeeInfo
-{
-private:
-    string name;
-    int id;
-
-public:
-    EmployeeInfo(string name, int id)
-    {
-        this->name = name;
-        this->id = id;
-    }
-
-    string getName()
-    {
-        return name;
-    }
-    int getId()
-    {
-        return id;
-    }
-};
-int main()
-{
-    HWBinaryTree<EmployeeInfo> tree;
-    EmployeeInfo info1 = EmployeeInfo("Haichuan", 1);
-    EmployeeInfo *info2 = new EmployeeInfo("Haichuan", 2);
-
-    tree.insert(info1);
-}
 
 #endif // _HW_BINARY_TREE_H_
