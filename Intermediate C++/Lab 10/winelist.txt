@@ -1,0 +1,100 @@
+Dow Vintage Port                         ;2011  ;99    ;82    ;Red;location;1         
+Mollydooker Shiraz Carnival of Love      ;2012  ;95    ;75    ;Red;location;2         
+Prats & Symington Douro Chryseia         ;2011  ;97    ;55    ;Red;location;3         
+Quinta do Vale Meao Douro                ;2011  ;97    ;76    ;Red;location;4         
+Leeuwin Chardonnay River Art Series      ;2011  ;96    ;89    ;Red;location;5         
+Castello di Ama Chianti                  ;2010  ;95    ;52    ;Red;location;6         
+Clos des Papes Chateauneuf-du-Pape       ;2012  ;97    ;135   ;Red;location;7         
+Brewer-Clifton Pinot Noir Rita Hills     ;2012  ;94    ;40    ;Red;location;8         
+Concha y Toro Cabernet Sauvignon         ;2010  ;95    ;125   ;Red;location;9         
+Chateau Leoville Las Cases St.-Julien    ;2011  ;95    ;165   ;Red;location;10        
+Mount Eden Chardonnay Santa Cruz         ;2011  ;95    ;60    ;Red;location;11        
+Chateau Guiraud Sauternes                ;2011  ;97    ;50    ;Red;location;12        
+Fonseca Vintage Port                     ;2011  ;98    ;116   ;Red;location;13        
+Fontodi Colli della                      ;2011  ;95    ;120   ;Red;location;14        
+Bedrock The Bedrock Heritage             ;2012  ;95    ;42    ;Red;location;15        
+Two Hands Shiraz Barossa Garden          ;2012  ;95    ;69    ;Red;location;16        
+Soter Pinot Noir Yamhill-Carlton         ;2012  ;95    ;60    ;Red;location;17        
+Chateau Doisy-Vedrines Barsac            ;2011  ;95    ;35    ;Red;location;18        
+Luca Malbec Uco Valley                   ;2012  ;93    ;32    ;Red;location;19        
+Peter Michael Chardonnay                 ;2012  ;95    ;90    ;Red;location;20        
+Castello di Volpaia Chianti              ;2010  ;93    ;29    ;Red;location;21        
+Podere Sapaio Bolgheri Volpolo           ;2011  ;93    ;35    ;Red;location;22        
+St.-Cosme Chateauneuf-du-Pape            ;2010  ;96    ;59    ;Red;location;23        
+Massolino Barolo                         ;2009  ;95    ;60    ;Red;location;24        
+Bodegas Fournier Malbec                  ;2010  ;94    ;54    ;Red;location;25        
+Emeritus Pinot Noir Russian River        ;2011  ;93    ;42    ;Red;location;26        
+Quinta do Portal Douro Colheita          ;2011  ;92    ;15    ;Red;location;27        
+Chateau de Beaucastel Chateauneuf-du-Pape;2011  ;94    ;97    ;Red;location;28        
+Hamilton Russell Pinot Noir              ;2012  ;93    ;46    ;Red;location;29        
+DuMOL Syrah Russian River Valley         ;2012  ;94    ;55    ;White;location;30        
+Sangiovese-Cabernet Sauvignon            ;2011  ;92    ;18    ;White;location;31        
+Hidden Ridge Cabernet Sauvignon          ;2009  ;93    ;45    ;White;location;32        
+Orin Swift Machete California            ;2012  ;93    ;48    ;White;location;33        
+La Rioja Alta Rioja Vina Ardanza Reserva ;2005  ;92    ;30    ;White;location;34        
+Amavi Cabernet Sauvignon Walla Valley    ;2011  ;92    ;29    ;White;location;35        
+Marcassin Pinot Noir Sonoma Marcassin    ;2009  ;97    ;125   ;White;location;36        
+Giuseppe Cortese Barbaresco Rabaja       ;2010  ;94    ;55    ;White;location;37        
+Aubert Chardonnay Russian River          ;2012  ;95    ;80    ;White;location;38        
+Oddero Barolo                            ;2010  ;93    ;49    ;White;location;39        
+Loosen Bros. Riesling QbA Mosel Dr. L    ;2012  ;91    ;12    ;White;location;40        
+Rombauer Chardonnay Carneros             ;2012  ;92    ;34    ;White;location;41        
+Lapostolle Clos Apalta                   ;2010  ;94    ;89    ;White;location;42        
+Charles Smith Riesling                   ;2013  ;91    ;12    ;White;location;43        
+Vina Cono Sur Cabernet Valley            ;2011  ;91    ;14    ;White;location;44        
+Tikal Patriota Mendoza                   ;2012  ;91    ;23    ;White;location;45        
+Turley Zinfandel California Juvenile     ;2012  ;91    ;20    ;White;location;46        
+Luce della Vite Toscana Luce             ;2011  ;95    ;105   ;White;location;47        
+Fincas Patagonicas Malbec Mendoza Zolo   ;2012  ;91    ;19    ;White;location;48        
+Trimbach Riesling Alsace                 ;2012  ;91    ;25    ;White;location;49        
+Abadia Retuerta Vino Duero               ;2010  ;92    ;35    ;White;location;50        
+Giuseppe Rinaldi Barolo Brunate          ;2010  ;97    ;129   ;White;location;51        
+Herman Story Grenache                    ;2011  ;93    ;42    ;White;location;52        
+Ponzi Pinot Noir Willamette Valley       ;2012  ;91    ;25    ;White;location;53        
+Mumm Napa Brut Napa Valley Prestige      ;2012  ;91    ;22    ;White;location;54        
+Veramonte Cabernet Sauvignon             ;2011  ;90    ;12    ;White;location;55        
+Joao Portugal Ramos Alentejo             ;2012  ;90    ;13    ;White;location;56        
+Vina Bisquertt Syrah Colchagua Valley    ;2012  ;90    ;13    ;White;location;57        
+TwentyFour Cabernet Sauvignon Napa Valley;2010  ;93    ;112   ;White;location;58        
+Peter Lehmann Clancy's Barossa           ;2011  ;90    ;15    ;White;location;59        
+St.-Urbans-Hof Riesling Mosel Old Vines  ;2012  ;90    ;16    ;White;location;60        
+De Martino Cabernet Sauvignon Maipo      ;2011  ;92    ;17    ;White;location;61        
+Bodegas Montecillo Rioja Vina            ;2010  ;90    ;10    ;White;location;62        
+Buitenverwachting Sauvignon Blanc        ;2013  ;90    ;15    ;White;location;63        
+Cune Rioja White Monopole                ;2013  ;90    ;15    ;White;location;64        
+Ornellaia Bolgheri Superiore             ;2011  ;96    ;240   ;White;location;65        
+Fowles Shiraz Victoria Are You Game?     ;2012  ;91    ;17    ;White;location;66        
+Tohu Sauvignon Blanc Marlborough         ;2013  ;90    ;13    ;White;location;67        
+Godelia Mencia Bierzo                    ;2010  ;92    ;21    ;White;location;68        
+Feudo di Santa Croce Primitivo di        ;2010  ;91    ;22    ;White;location;69        
+D. Kourtakis Assyrtiko Santorini Greek   ;2012  ;90    ;13    ;White;location;70        
+Roar Pinot Noir Santa Lucia Highlands    ;2012  ;93    ;52    ;White;location;71        
+Chateau Lilian Ladouys St.-Estephe       ;2011  ;90    ;19    ;White;location;72        
+Gerard Bertrand Syrah-Grenache Languedoc ;2011  ;90    ;19    ;White;location;73        
+di Majo Norante Molise Ramitello         ;2011  ;90    ;18    ;White;location;74        
+Disznoko Tokaji Aszu 5 Puttonyos         ;2006  ;94    ;49    ;White;location;75        
+Vietti Barbera d'Asti Tre Vigne          ;2012  ;90    ;17    ;White;location;76        
+E. Guigal Cote-Rotie Chateau d'Ampuis    ;2010  ;97    ;206   ;White;location;77        
+Acrobat Pinot Noir Oregon                ;2012  ;90    ;20    ;White;location;78        
+Marques de Grinon Cabernet Sauvignon     ;2010  ;93    ;40    ;White;location;79        
+Nino Negri Valtellina Superiore Quadrio  ;2010  ;90    ;20    ;White;location;80        
+Domaine de Triennes Vin de Pays du       ;2010  ;90    ;20    ;White;location;81        
+Mulderbosch Faithful Hound Stellenbosch  ;2011  ;91    ;25    ;White;location;82        
+Round Pond Estate Sauvignon Blanc        ;2013  ;90    ;24    ;White;location;83        
+Bodegas Marques de Murrieta Castillo     ;2005  ;94    ;89    ;White;location;84        
+Masciarelli Montepulciano d'Abruzzo      ;2010  ;91    ;25    ;White;location;85        
+Pali Wine Co. Pinot Noir Santa Barbara   ;2010  ;90    ;23    ;White;location;86        
+Firriato Sicilia Santagostino            ;2011  ;91    ;23    ;Red;location;87        
+Christian Moreau Pere & Fils Chablis     ;2012  ;91    ;31    ;White;location;88        
+Carol Shelton Zinfandel Mendocino County ;2011  ;90    ;19    ;White;location;89        
+Domnne Wachau Gruner Veltliner Federspiel;2012  ;90    ;14    ;White;location;90        
+Domaine La Barroche Chateauneuf-du-Pape  ;2012  ;95    ;78    ;White;location;91        
+Vecchia Cantina di Montepulciano Vino    ;2010  ;90    ;15    ;White;location;92        
+Recanati Cabernet Sauvignon Galilee      ;2012  ;90    ;17    ;White;location;93        
+Chateau Lamartine Cahors                 ;2011  ;90    ;19    ;White;location;94        
+Antonio Barbadillo Manzanilla Sanlucar   ;2011  ;90    ;15    ;White;location;95        
+Domaine Gerovassiliou Epanomi White      ;2013  ;90    ;22    ;White;location;96        
+Tenuta delle Terre Nere Etna             ;2012  ;90    ;22    ;White;location;97        
+Domaine Terlato & Chapoutier Shiraz      ;2012  ;90    ;19    ;White;location;98        
+Loimer Gruner Veltliner Qualitatswein    ;2012  ;91    ;22    ;White;location;99        
+Saint Clair Pinot Noir Marlborough       ;2012  ;92    ;31    ;White;location;100       
