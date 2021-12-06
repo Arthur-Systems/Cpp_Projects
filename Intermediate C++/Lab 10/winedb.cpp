@@ -58,8 +58,7 @@ int main(int argc, char *argv[])
       {
          string query = insertwine();
          mysql_perform_query(conn, (char *)query.c_str());
-         cout << query << endl;
-         res = mysql_perform_query(conn, (char *)"select * from wineInfo");
+         res = mysql_perform_query(conn, (char *)" SELECT * FROM wineInfo ORDER BY upc DESC LIMIT 1; ");
          printwine(res);
          cout << query << endl;
       }
@@ -67,7 +66,7 @@ int main(int argc, char *argv[])
       {
          string query = updatewine();
          mysql_perform_query(conn, (char *)query.c_str());
-         cout << query << endl;
+         res = mysql_perform_query(conn, (char *)" SELECT * FROM wineInfo WHERE price = '399' ");
          printwine(res);
          cout << query << endl;
       }

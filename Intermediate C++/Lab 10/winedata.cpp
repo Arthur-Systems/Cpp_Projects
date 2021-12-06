@@ -162,7 +162,21 @@ string updatewine()
         cout << "Invalid input, please enter again: ";
         cin >> onetwo;
     }
-
+    switch (onetwo)
+    {
+    case 1:
+    {
+        cout << "Please enter the name of the wine: " << endl;
+        cin >> name;
+        break;
+    }
+    case 2:
+    {
+        cout << "Please enter the upc of the wine: " << endl;
+        cin >> upc;
+        break;
+    }
+    }
     cout << "\n \n 1. name" << endl;
     cout << "2. vintage" << endl;
     cout << "3. score" << endl;
