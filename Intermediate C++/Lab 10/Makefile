@@ -2,21 +2,16 @@
 #
 CC=g++
 #
-CFLAGS = -c -Wall -I/usr/include/mysql 
+CFLAGS = -c -Wall -I/usr/lib/mysql
 LFLAGS = -L/usr/lib/mysql -lmysqlclient
+SRC = winedata.cpp winedb.cpp printMeFirst.cpp dbconnect.cpp
+OBJ = $(SRC:.cc=.o)
+EXEC = winedb
 
+all: $(EXEC)
 
-
-all: winedb
-
-winedb: winedb.o dbconnect.o
-	$(CC) winedb.o dbconnect.o -o winedb $(LFLAGS)
-
-dbconnect.o: dbconnect.cpp
-	$(CC) $(CFLAGS) dbconnect.cpp
-
-winedb.o: winedb.cpp
-	$(CC) $(CFLAGS) winedb.cpp
+$(EXEC): $(OBJ)
+	$(CXX) $(LDFLAGS) -o $@ $(OBJ) $(LBLIBS) `mysql_config --cflags --libs`
 
 clean:
 	rm *.o winedb

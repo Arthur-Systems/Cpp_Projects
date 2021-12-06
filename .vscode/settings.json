@@ -4,6 +4,8 @@
         "ostream": "cpp",
         "xlocale": "cpp",
         "iomanip": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "vector": "cpp",
+        "*.tcc": "cpp"
     }
 }

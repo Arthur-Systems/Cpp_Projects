@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <string>
 #include <ctime>
+#include "printMeFirst.h"
 
 using namespace std;
 
@@ -19,9 +20,9 @@ using namespace std;
 
 void printMeFirst(string name, string courseInfo)
 {
-      cout << "Program written by: " << name << endl;
-      cout << "Course Info: " << courseInfo << endl;
-      time_t now = time(0);
-      char* dt = ctime(&now);
-      cout << "Date: " << dt << endl;
+  cout << "Program written by: " << name << endl;
+  cout << "Course Info: " << courseInfo << endl;
+  time_t now = time(0);
+  char *dt = ctime(&now);
+  cout << "Date: " << dt << endl;
 }
