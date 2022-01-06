@@ -5,6 +5,7 @@ Purpose- This is the header file. It calulates the wine data, displays it, and i
 
 @function printHeader() - This function prints the table header
 @function printwine() - This function prints every wine based on the input
+      @param res - the result of the query
 @function displayscore() - This function displays the score of the wine based on the minimum and maximum score
 @function displayprice() -  This function displays the price of the wine based on the minimum and maximum price
 @function topten() - This function displays the top ten wines sorted by price

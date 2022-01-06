@@ -2,7 +2,7 @@ CXX = g++
 CXXFLAGS = -c -Wall  
 LDFLAGS = 
 
-SRC = rain.cpp Weia2.cpp
+SRC = HWrain.cpp HWa2.cpp
 OBJ = $(SRC:.cc=.o)
 EXEC = RainFallStats
 

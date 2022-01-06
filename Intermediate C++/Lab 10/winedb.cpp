@@ -7,7 +7,7 @@ using namespace std;
 int main(int argc, char *argv[])
 {
    printMeFirst("Haichuan Wei", "CS116 Lab 10");
-   //connect to the database
+   // connect to the database
    MYSQL *conn;      // the connection
    MYSQL_RES *res;   // the results
    MYSQL_ROW fields; // the results row (line by line)
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
       }
       else if (selection == 2)
       {
-         string query = displayprice();
+         string query = displayprice(); //
          res = mysql_perform_query(conn, (char *)query.c_str());
          printwine(res);
          cout << query << endl;

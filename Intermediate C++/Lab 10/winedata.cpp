@@ -1,7 +1,7 @@
 
 #include "winedata.h"
 using namespace std;
-//print header
+// print header
 void printHeader()
 {
     cout << "   " << setw(25) << "Wine Name"
@@ -20,26 +20,20 @@ void printHeader()
 
 void printwine(MYSQL_RES *res)
 {
-    MYSQL_ROW row;
-    int count = 0;
-    double price = 0;
-    double whiteprice = 0;
-    double redprice = 0;
-    int redcount = 0;
-    int whitecount = 0;
+    MYSQL_ROW row;         // row of data
+    int count = 0;         // count of rows
+    double price = 0;      // price of wine
+    double whiteprice = 0; // price of white wine
+    double redprice = 0;   // price of red wine
+    int redcount = 0;      // count of red wines
+    int whitecount = 0;    // count of white wines
 
-    //print the result of the sql query
-    printHeader();
+    printHeader(); // print header
     while ((row = mysql_fetch_row(res)) != NULL)
-    {
+    { // print the result of the sql query
         string type = row[4];
         count++;
         price += atof(row[3]);
-        /* print out each row of the data extracted from
-          * MySQL database
-          * Make sure the output is line up with the header
-          * Hint: use left and setw
-          */
 
         cout << "   " << setw(42) << left << row[0] << " " // coulumn (field) #1 - Wine Name
              << setw(6) << row[1] << "  "                  // field #2 - Vintage
@@ -92,7 +86,7 @@ string displayprice()
         cout << "Invalid input, please enter again: ";
         cin >> y;
     }
-    string query = "SELECT * FROM wineInfo WHERE price BETWEEN " + to_string(x) + " AND " + to_string(y) + " order by price DESC , score DESC ";
+    string query = "SELECT * FROM wineInfo WHERE price BETWEEN " + to_string(x) + " AND " + to_string(y) + " order by price DESC , score DESC "; // command executed
     return query;
 };
 string displayscore()
@@ -117,7 +111,7 @@ string displayscore()
         cout << "Invalid input, please enter again: ";
         cin >> y;
     }
-    string query = "SELECT * FROM wineInfo WHERE score BETWEEN " + to_string(x) + " AND " + to_string(y) + "  order by score ASC ";
+    string query = "SELECT * FROM wineInfo WHERE score BETWEEN " + to_string(x) + " AND " + to_string(y) + "  order by score ASC "; // command executed
     return query;
 };
 string topten()
@@ -143,7 +137,7 @@ string insertwine()
     cin >> type;
     cout << "Please enter the upc of the wine: " << endl;
     cin >> upc;
-    string query = "INSERT INTO wineInfo (name, vintage, score, price, type, upc) VALUES ('" + name + "', " + to_string(vintage) + ", " + to_string(score) + ", " + to_string(price) + ", '" + type + "', " + to_string(upc) + ")";
+    string query = "INSERT INTO wineInfo (name, vintage, score, price, type, upc) VALUES ('" + name + "', " + to_string(vintage) + ", " + to_string(score) + ", " + to_string(price) + ", '" + type + "', " + to_string(upc) + ")"; // command executed
     return query;
 };
 string updatewine()
@@ -251,5 +245,5 @@ string updatewine()
         query += "upc = " + to_string(upc) + " ";
         break;
     }
-    return query;
+    return query; // command returned
 };

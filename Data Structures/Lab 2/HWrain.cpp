@@ -1,16 +1,10 @@
-//
-// Purpose- The purpose of this file is to take 12 user defined inputs and use sorting to sort them from lease to greatest.
-// @author Haichuan Wei
-// @version 1.0 9/21/21
-// @param  rainfallstore()- This functions asks all the user to input the rainfall data and store it in a vector. Then calculate and sort the inputted data
-// @return- 0 and prints out the sorted  data.
-//
+
 #include <iostream>
 #include <string>
 #include <vector>
 #include <algorithm>
 #include <iomanip>
-#include "rain.h"
+#include "HWrain.h"
 using namespace std;
 
 struct Data
@@ -57,15 +51,15 @@ int rainfallstore()
         }
     }
 
-    //!total data: goes though all every given data and adds them together
+    //! total data: goes though all every given data and adds them together
     for (int index = 0; index < totalrain.size(); index++)
     {
         totalrain[0]->total += totalrain[index]->AmountOfRain;
     }
-    //!average data: Devides the already given total and puts it in the average variable in the structure.
+    //! average data: Devides the already given total and puts it in the average variable in the structure.
     totalrain[0]->average = totalrain[0]->total / 12;
 
-    //!smallest data: First initializes by setting itself as the first data in the vector and then goes through the vector and compares its current data with the vector data and if it is smaller it will set the smallest data to the current data.
+    //! smallest data: First initializes by setting itself as the first data in the vector and then goes through the vector and compares its current data with the vector data and if it is smaller it will set the smallest data to the current data.
     totalrain[0]->smallest = totalrain[0]->AmountOfRain;
     for (int index = 0; index < 12; index++)
     {
@@ -90,7 +84,7 @@ int rainfallstore()
          << "The average rainfall for the year is:" << totalrain[0]->average << " Inches" << endl
          << "The smallest rainfall for the year is:" << totalrain[0]->smallest << " Inches" << endl
          << "The largest rainfall for the year is:" << totalrain[0]->largest << " Inches" << endl;
-    //!selection sort: This sort first takes the smallest data and puts it in the first position of the vector and then goes through the vector and compares the current data with the vector data and if it is smaller it will swap the data.
+    //! selection sort: This sort first takes the smallest data and puts it in the first position of the vector and then goes through the vector and compares the current data with the vector data and if it is smaller it will swap the data.
     for (int count = 0; count < totalrain.size(); count++)
     {
         int MinimumNum = count;
@@ -112,6 +106,5 @@ int rainfallstore()
     {
         cout << totalrain[index]->AmountOfRain << endl;
     }
-
     return 0;
 }
