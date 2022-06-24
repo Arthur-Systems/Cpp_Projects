@@ -1,11 +1,12 @@
 {
-    "files.associations": {
-        "iostream": "cpp",
-        "ostream": "cpp",
-        "xlocale": "cpp",
-        "iomanip": "cpp",
-        "xstring": "cpp",
-        "vector": "cpp",
-        "*.tcc": "cpp"
-    }
+  "files.associations": {
+    "iostream": "cpp",
+    "ostream": "cpp",
+    "xlocale": "cpp",
+    "iomanip": "cpp",
+    "xstring": "cpp",
+    "vector": "cpp",
+    "*.tcc": "cpp"
+  },
+  "makefile.extensionOutputFolder": "./.vscode"
 }
